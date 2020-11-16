@@ -1,0 +1,1350 @@
+# SaberFactions fork language file.
+# Edited by Troi & coded by thmihnea
+
+root:
+    AUTHOR: misc
+    RESPONSIBLE: misc
+    LANGUAGE: English
+    ENCODING: UTF-8
+    LOCALE: en_US
+    REQUIRESUNICODE: 'false'
+    DEFAULT: 'true'
+    STATE: complete
+    LOCAL:
+        AUTHOR: misc
+        RESPONSIBLE: misc
+        LANGUAGE: English
+        REGION: US
+        STATE: complete
+
+    //ACTIONS
+action_nopermission:
+action_nopermission_pain:
+action_owned_territory_deny:
+action_owned_territory_pain_deny:
+action_must_be:
+action_no_same_role:
+action_no_faction:
+
+    //ACTIONS DENIED
+action-denied-safezone: 'You can't use %1$s in safezone!'
+action-denied-warzone: 'You can't use %1$s in warzone!'
+action-denied-wilderness: 'You can't use %1$s in wilderness!'
+action-denied-other: '%1$s does not allow you to %2$s here!'
+
+
+                         //COMMANDS USAGES/HELP
+command_usage_template_color:
+command_usage_help_next_create:
+command_usage_help_home:
+command_usage_help_404:
+command_usage_help_bank:
+command_usage_help_player_titles:
+command_usage_help_ownership:
+command_usage_help_relations:
+command_usage_help_permissions:
+command_usage_help_admin:
+command_usage_help_moar:
+command_usage_help_description:
+
+    //NEAR COMMAND
+near_description:
+near_disabled_message:
+near_format:
+near_use_message:
+
+    //CONTEXT
+context_administer_different_faction:
+context_admin_required:
+context_same_rank_control:
+context_mod_required:
+
+    //UPGRADES
+upgrades_description:
+upgrades_points_taken:
+upgrades_not_enough_points:
+upgrades_disabled:
+
+    //CORNER
+corner_cannot_claim:
+corner_claimed_successfully:
+corner_attempting_to_claim:
+corner_fail_with_feedback: '&c&l[!] &cOne or more claims in this corner could not be claimed. Total chunks claimed: &b'
+corner_not_corner:
+corner_description:
+
+    //CORNER LIST
+corner_list_description:
+
+    //ADMIN
+admin_not_member:
+admin_not_admin:
+admin_target_self:
+admin_demotes:
+admin_demoted:
+admin_promotes:
+admin_promoted:
+admin_description:
+admin_no_members:
+
+    //ADMIN HOME
+ahome_description:
+ahome_no_home:
+ahome_successfully:
+ahome_target_offline:
+ahome_target:
+
+    //ANNOUNCE
+announce_description:
+
+    //ALTS COMMAND
+alts_description:
+alts_list_description:
+alts_list_no_alts:
+alts_list_format:
+alts_deinvite_description:
+
+    //FREECAM COMMAND
+freecam_enemy_in_radius:
+freecam_outside_flight:
+freecam_enabled:
+freecam_disabled:
+freecam_description:
+
+    //AUTOCLAIM COMMAND
+autoclaim_enabled:
+autoclaim_disabled:
+autoclaim_required_rank:
+autoclaim_other_faction:
+autoclaim_description:
+
+    //ALT INVITE
+altinvite_description:
+altinvite_invited_alt:
+
+    //ALT KICK
+altkick_description:
+altkick_no_alt:
+altkick_not_member:
+
+    //AUTO-HELP
+autohelp_for: 'Help for command "'
+
+                  //HOME COMMAND
+home_other_not_set: '&c&l[!] &7%s does not have their faction home set!'
+home_teleport_other: '&c&l[!] &7You have teleported to %s''s faction home!'
+home_disabled: '&c&l[!]&7 Sorry, Faction homes are &cdisabled on this server.'
+home_teleport_disabled: '&c&l[!]&7 Sorry, the ability to &cteleport &7to Faction homes is &cdisabled &7on this server.'
+home_not_set: '&c&l[!]&7 Your faction does &cnot &7have a home. '
+home_unset: '&c&l[!]&7 Sorry, your faction home has been &cun-set &7since it is no longer in your territory.'
+home_teleport_in_enemy_claim: '&c&l[!]&7 You &ccannot teleport &7to your &cfaction home&7 while in the territory of an &cenemy faction&7.'
+home_wrong_world: '&c&l[!]&7 You &ccannot &7teleport to your &cfaction home&7 while in a different world.'
+home_enemy_near: '&c&l[!]&7 You &ccannot teleport&7 to your faction home while an enemy is within &c%s&7 blocks of you.'
+home_to_teleport: 'to teleport to your faction home'
+home_for_teleporting: 'for teleporting to your faction home'
+home_description: 'Teleport to the faction home'
+home_blocked: '&c&l[!] You may not teleport to a home that is claimed by &b%1$s'
+
+                  //SHOP COMMAND
+shop_description:
+
+    //BAN COMMAND
+ban_description:
+ban_target:
+ban_successfully:
+ban_self:
+ban_insufficient_rank:
+ban_already_banned:
+
+    //BANLIST COMMAND
+banlist_description:
+banlist_header:
+banlist_entry:
+banlist_no_faction:
+banlist_invalid:
+
+    //BOOM COMMAND
+boom_peaceful_only:
+boom_to_toggle:
+boom_for_toggling:
+boom_enabled:
+boom_description:
+
+    //BYPASS COMMAND
+bypass_enable:
+bypass_enable_log:
+bypass_disable:
+bypass_disable_log:
+bypass_description:
+
+    //BANNER COMMAND
+banner_description:
+banner_no_banner:
+banner_not_enough_money:
+banner_money_taken:
+banner_success:
+banner_disabled:
+
+    //TPBANNER COMMAND
+tpbanner_not_set:
+tpbanner_success:
+tpbanner_description:
+
+    //CHAT COMMAND
+chat_disabled:
+chat_invalid_mode:
+chat_description:
+chat_mode_public:
+chat_mode_alliance:
+chat_mode_truce:
+chat_mode_faction:
+chat_mode_mod:
+chat_mode_mod_only:
+
+    //CHATSPY COMMAND
+chatspy_enable:
+chatspy_enable_log:
+chatspy_disable:
+chatspy_disable_log:
+chatspy_description:
+
+    //CLAIM COMMAND
+claim_invalid_radius:
+claim_denied:
+claim_description:
+
+    //CLAIM FILL COMMAND
+claimfill_description:
+claimfill_above_maximum:
+claimfill_already_claimed:
+claimfill_too_far:
+claimfill_past_limit:
+claimfill_not_enough_land_left:
+claimfill_too_much_fails:
+
+    //CLAIM LINE COMMAND
+claimline_invalid_radius:
+claimline_denied:
+claimline_description:
+claimline_above_maximum:
+claimline_not_valid:
+
+    //CONFIG COMMAND
+config_no_config:
+config_set_true:
+config_set_false:
+config_set_added:
+config_set_removed:
+config_option_set:
+config_color_set:
+config_integer_required:
+config_long_required:
+config_double_required:
+config_float_required:
+config_invalid_color:
+config_invalid_collection:
+config_invalid_material:
+config_invalid_type_set:
+config_material_added:
+config_material_removed:
+config_log:
+config_error_setting:
+config_error_matching:
+config_error_type:
+config_description:
+
+    //CONVERT COMMAND
+convert_backend_running:
+convert_backend_invalid:
+convert_description:
+
+    //COORDS COMMAND
+coords_message:
+coords_desciption:
+
+    //CHECKPOINT COMMAND
+checkpoint_disabled:
+checkpoint_set:
+checkpoint_go:
+checkpoint_invalid_location:
+checkpoint_not_set:
+checkpoint_claimed:
+checkpoint_description:
+
+    //CREATE COMMAND
+create_already_reserved:
+create_must_leave:
+create_in_use:
+create_to_create:
+create_for_creating:
+create_error:
+create_created:
+create_you_should:
+create_created_log:
+create_description:
+
+    //DELHOME COMMAND
+delhome_success:
+delhome_description:
+
+    //CHECK COMMAND
+check_description:
+
+    //WEEWOO COMMAND
+weewoo_started:
+weewoo_stopped:
+weewoo_already_started:
+weewoo_already_stopped:
+weewoo_description:
+
+    //DISCORD - FEATURE IS TO BE REMOVED
+discord_description:
+discord_not_set:
+
+    //DEBUG
+debug_description:
+debug_printed:
+
+    //DEINVITE COMMAND
+deinvite_can_deinvite:
+deinvite_click_to_deinvite:
+deinvite_already_member:
+deinvite_might_want:
+deinvite_revoked:
+deinvite_revokes:
+deinvite_description:
+
+    //DELWARP COMMAND
+delwarp_deleted:
+delwarp_invalid:
+delwarp_to_delete:
+delwarp_for_deleting:
+delwarp_description:
+
+    //DESCRIPTION COMMAND
+description_changes:
+description_changed:
+description_to_change:
+description_for_changing:
+description_description:
+
+    //DISBAND COMMAND
+disband_immutable:
+disband_too_young:
+disband_marked_permanent:
+disband_broadcast_yours:
+disband_broadcast_generic:
+disband_broadcast_not_yours:
+disband_holdings:
+disband_player:
+disband_confirm:
+disband_description:
+
+    //FLY COMMAND
+fly_disabled:
+fly_description:
+fly_change:
+fly_cooldown:
+fly_damage:
+fly_no_access:
+fly_no_epearl:
+fly_enemy_near:
+fly_check_enemy_near:
+fly_auto:
+
+    //FOCUS COMMAND
+focus_same_faction:
+focus_focusing:
+focus_no_longer:
+focus_description:
+
+    //FRIENDLY COMMAND
+friendly_fire_description:
+friendly_fire_toggle_off:
+friendly_fire_toggle_on:
+
+    //FWARP COMMAND
+fwarp_click_to_warp:
+fwarp_command_format:
+fwarp_warped:
+fwarp_invalid_warp:
+fwarp_invalid_password:
+fwarp_to_warp:
+fwarp_for_warping:
+fwarp_warps:
+fwarp_description:
+fwarp_password_required:
+fwarp_password_timeout:
+
+    //GRACE COMMAND
+grace_time_remaining:
+grace_disabled_no_format:
+grace_format:
+grace_enabled_format:
+grace_enabled_placement:
+grace_description:
+
+    //HINT PERMISSION
+hint_permission:
+
+    //INVENTORYSEE COMMAND
+inventorysee_description:
+
+    //INSPECT COMMAND
+inspect_disabled_msg:
+inspect_disabled_no_faction:
+inspect_enabled:
+inspect_header:
+inspect_row:
+inspect_no_data:
+inspect_not_in_claim:
+inspect_bypass:
+inspect_description:
+
+    //INVITE COMMAND
+invite_to_invite:
+invite_for_inviting:
+invite_click_to_join:
+invite_invited_you:
+invite_invited:
+invite_already_member:
+invite_already_invited:
+invite_description:
+invite_banned:
+
+    //JOIN COMMAND
+join_cannot_force:
+join_system_faction:
+join_already_member:
+join_alt_limit_alts:
+join_in_other_faction:
+join_negative_power:
+join_requires_invitation:
+join_attempted_join:
+join_to_join:
+join_for_joining:
+join_success:
+join_moved:
+join_joined:
+join_joined_log:
+join_moved_log:
+join_description:
+join_banned:
+
+    //KICK COMMAND
+kick_candidates:
+kick_click_to_kick:
+kick_self:
+kick_none:
+kick_not_member:
+kick_insufficient_rank:
+kick_negative_power:
+kick_to_kick:
+kick_for_kicking:
+kick_faction:
+kick_kicks:
+kick_kicked:
+kick_description:
+
+    //LIST COMMAND
+list_faction_list:
+list_to_list:
+list_for_listing:
+list_online_factionless:
+list_description:
+
+    //SPAM COMMAND
+spam_enabled:
+spam_disabled:
+spam_description:
+
+    //LOCK COMMAND
+lock_locked:
+lock_unlocked:
+lock_description:
+
+    //LOGINS COMMAND
+logins_toggle:
+logins_description:
+
+    //LOWPOWER COMMAND
+lowpower_header:
+lowpower_format:
+lowpower_description:
+
+    //LOOKUP COMMAND
+lookup_invalid:
+lookup_faction_home:
+lookup_claim_count:
+lookup_claim_list:
+lookup_only_normal:
+lookup_description:
+
+    //MAP COMMAND
+map_to_show:
+map_for_showing:
+map_update_enabled:
+map_update_disabled:
+map_description:
+
+    //MAP HEIGHT
+mapheight_description:
+mapheight_set:
+mapheight_current:
+
+    //MOD COMMAND
+mod_candidates:
+mod_click_to_promote:
+mod_not_member:
+mod_not_admin:
+mod_self:
+mod_target_is_admin:
+mod_revokes:
+mod_revoked:
+mod_promotes:
+mod_promoted:
+mod_description:
+
+    //CO-LEADER COMMAND
+coleader_candidates:
+coleader_click_to_promote:
+coleader_not_member:
+coleader_not_admin:
+coleader_self:
+coleader_target_is_admin:
+coleader_revokes:
+coleader_revoked:
+coleader_promotes:
+coleader_promoted:
+coleader_description:
+
+    //CONVERT CONFIG
+convertconfig_description:
+convertconfig_success:
+convertconfig_failed:
+convertconfig_failed_config_missing:
+
+    //MODIFY POWER
+modifypower_added:
+modifypower_description:
+
+    //MONEY
+money_long:
+money_description:
+money_cannot_afford:
+money_gained:
+
+    //MONEY BALANCE
+moneybalance_short:
+moneybalance_description:
+
+    //MONEY DEPOSIT
+moneydeposit_description:
+moneydeposit_deposited:
+
+    //MONEY TRANSFER FACTION
+moneytransferfaction_description:
+moneytransferfaction_transfer:
+moneytransferfaction_transfer_cannot_afford:
+
+    //MONEY TRANSFER FACTION -> PLAYER
+moneytransferfactionplayer_description:
+moneytransferfactionplayer_transfer:
+
+    //MONEY TRANSFER PLAYER -> FACTION
+moneytransferplayerfaction_description:
+moneytransferplayerfaction_transfer:
+
+    //MONEY WITHDRAW
+moneywithdraw_description:
+moneywithdraw_withdraw:
+
+    //COMMAND COOLDOWN
+cooldown:
+
+    //OPEN COMMAND
+open_to_open:
+open_for_opening:
+open_open:
+open_closed:
+open_changes:
+open_changed:
+open_description:
+
+    //OWNER COMMAND
+owner_disabled:
+owner_limit:
+owner_wrong_faction:
+owner_not_claimed:
+owner_not_member:
+owner_cleared:
+owner_removed:
+owner_to_set:
+owner_for_setting:
+owner_added:
+owner_description:
+
+    //KILL HOLOGRAMS
+killholograms_description:
+
+    //OWNER LIST COMMAND
+ownerlist_disabled:
+ownerlist_wrong_faction:
+ownerlist_not_claimed:
+ownerlist_none:
+ownerlist_owners:
+ownerlist_description:
+
+    //PAYPAL COMMAND
+paypal_not_set:
+
+    //PAYPAL SET COMMAND
+paypalset_admin_successful:
+paypalset_admin_failed:
+paypalset_not_email:
+paypalset_description:
+paypalset_created:
+paypalset_successful:
+
+    //PAYPAL SEE COMMAND
+paypalsee_description:
+paypalsee_faction_paypal:
+paypalsee_faction_not_set:
+paypalsee_faction_no_faction:
+
+    //PEACEFUL COMMAND
+peaceful_description:
+peaceful_yours:
+peaceful_other:
+peaceful_grant:
+peaceful_revoke:
+
+    //PERM COMMAND
+perm_description:
+perm_invalid_relation:
+perm_invalid_access:
+perm_invalid_action:
+perm_set:
+perm_top:
+perm_locked:
+
+    //POINTS COMMAND
+points_show_description:
+points_show_wilderness:
+points_show_own:
+points_show_other:
+points_failure:
+points_successful:
+points_insufficient:
+points_description:
+
+
+    //ADD POINTS COMMAND
+addpoints_description:
+
+    //REMOVE POINTS COMMAND
+removepoints_successful:
+removepoints_description:
+
+    //SET POINTS COMMAND
+setpoints_successful:
+setpoints_description:
+
+    //PERMANENT
+permanent_description:
+permanent_grant:
+permanent_revoke:
+permanent_yours:
+permanent_other:
+
+    //PROMOTE
+promote_target:
+promote_success:
+promote_promoted:
+promote_demoted:
+promote_lowest_rank:
+promote_highest_rank:
+promote_higher_rank:
+promote_coleader_admin:
+promote_description:
+promote_wrong_faction:
+promote_not_allowed:
+promote_not_same:
+promote_not_self:
+
+    //PERMANENT POWER
+permanentpower_description:
+permanentpower_grant:
+permanentpower_revoke:
+permanentpower_success:
+permanentpower_faction:
+
+    //NO ACCESS
+noaccess:
+
+    //POWER
+power_to_show:
+power_for_showing:
+power_power:
+power_bonus:
+power_penalty:
+power_description:
+
+    //POWERBOOST
+powerboost_help_1:
+powerboost_help_2:
+powerboost_invalid_number:
+powerboost_player:
+powerboost_faction:
+powerboost_boost:
+powerboost_boost_log:
+powerboost_description:
+
+    //RELATIONS
+relations_you_cannot:
+relations_you_cannot_2:
+relations_already_in_relationship:
+relations_to_change:
+relations_for_changing:
+relations_mutual:
+relations_peaceful:
+relations_peaceful_other:
+relations_description:
+relations_exceeds_me:
+relations_exceeds_they:
+relations_proposal_1:
+relations_proposal_2:
+relations_proposal_sent:
+
+    //RELOAD
+reload_time:
+reload_description:
+
+    //RESERVE
+reserve_description:
+reserve_success:
+reserve_already_reserved:
+
+    //SAFE UNCLAIM EVERYTHING
+safeunclaimall_description:
+safeunclaimall_unclaimed:
+safeunclaimall_unclaimed_log:
+
+    //SAVE-ALL
+saveall_success:
+saveall_description:
+
+    //SCOREBOARD
+scoreboard_description:
+
+    //SET BANNER
+setbanner_success:
+setbanner_not_banner:
+setbanner_description:
+
+    //SET DEFAULT ROLE
+setdefaultrole_description:
+setdefaultrole_not_admin:
+setdefaultrole_success:
+setdefaultrole_invalid_role:
+
+    //SET FACTION WARP
+setfactionwarp_not_claimed:
+setfactionwarp_limit:
+setfactionwarp_set:
+setfactionwarp_to_set:
+setfactionwarp_for_setting:
+setfactionwarp_description:
+
+    //SET FACTION HOME
+sethome_disabled:
+sethome_not_claimed:
+sethome_to_set:
+sethome_for_setting:
+sethome_set:
+sethome_set_other:
+sethome_description:
+
+    //SET POWER
+setpower_success:
+setpower_description:
+
+    //SET MAXIMUM VAULTS
+setmaximumvaults_description:
+setmaximumvaults_success:
+
+    //ON COOLDOWN
+oncooldown:
+
+    //SPAWNER
+spawner_lock_toggled:
+spawner_lock_description:
+spawner_lock_cannot_place:
+
+    //FACTION STRIKES
+strikes_changed:
+strikes_info:
+strikes_target_invalid:
+strikes_struck:
+strikes_description:
+
+    //STRIKES GIVE
+strikesgive_description:
+
+    //STRIKES TAKE
+strikestake_description:
+
+    //STRIKES SET
+strikesset_description:
+
+    //STRIKES INFO
+strikesinfo_description:
+
+    //VIEW CHEST
+viewchest_description:
+
+    //VAULT
+vault_description:
+vault_invalid:
+vault_opening:
+vault_no_hopper:
+
+    //GET VAULT
+getvault_already_set:
+getvault_already_have:
+getvault_chest_near:
+getvault_success:
+getvault_invalid_location:
+getvault_description:
+getvault_receive:
+getvault_no_money:
+getvault_money_taken:
+
+    //LOGOUT
+logout_kick_message:
+logout_active:
+logout_logging:
+logout_description:
+logout_moved:
+logout_damage_taken:
+logout_teleported:
+
+    //NOTIFICATIONS
+notifications_toggled_on:
+notifications_toggled_off:
+notifications_description:
+
+    //SHOW
+show_no_faction_self:
+show_no_faction_other:
+show_to_show:
+show_for_showing:
+show_description:
+show_peaceful:
+show_permanent:
+show_joining:
+show_invitation:
+show_uninvited:
+show_no_home:
+show_power:
+show_bonus:
+show_penalty:
+show_depreciated:
+show_land_value:
+show_bank_contains:
+show_allies:
+show_enemies:
+show_members_online:
+show_members_offline:
+show_deaths_until_raidable:
+show_exempt:
+show_need_faction:
+
+    //SHOW CLAIMS
+showclaims_header:
+showclaims_format:
+showclaims_chunksformat:
+showclaims_description:
+
+    //SHOW INVITES
+showinvites_pending:
+showinvites_click_to_revoke:
+showinvites_description:
+
+    //SEE CHUNK
+seechunk_description:
+seechunk_toggle:
+seechunk_enabled:
+seechunk_disabled:
+
+    //STATUS
+status_format:
+status_online:
+status_ago_suffix:
+status_description:
+
+    //STEALTH
+stealth_description:
+stealth_enable:
+stealth_disable:
+stealth_must_be_member:
+
+    //STUCK
+stuck_time_format:
+stuck_cancelled:
+stuck_outside:
+stuck_exists:
+stuck_start:
+stuck_teleport:
+stuck_to_stuck:
+stuck_for_stucking:
+stuck_description:
+
+    //TAG
+tag_taken:
+tag_to_change:
+tag_for_changing:
+tag_faction:
+tag_changed:
+tag_description:
+
+    //TITLE
+title_to_change:
+title_for_changing:
+title_changed:
+title_description:
+
+    //TITLE TOGGLE
+titletoggle_toggled:
+titletoggle_description:
+
+    //TOGGLE ALLIANCE CHAT
+togglealliancechat_description:
+togglealliancechat_ignore:
+togglealliancechat_unignore:
+
+    //TOGGLE SCOREBOARD
+togglescoreboard_disabled:
+
+    //TOP
+top_description:
+top_top:
+top_line:
+top_invalid:
+
+    //TNT
+tnt_disabled_message:
+tnt_invalid_number:
+tnt_withdraw_not_enough_tnt:
+tnt_withdraw_not_enough_space:
+tnt_withdraw_success:
+tnt_deposit_success:
+tnt_deposit_not_enough_tnt:
+tnt_exceed_limit:
+tnt_amount:
+tnt_positive:
+tnt_description:
+tnt_add_description:
+tnt_take_description:
+
+    //TNT FILL
+tntfill_no_dispensers:
+tntfill_header:
+tntfill_success:
+tntfill_not_enough_tnt:
+tntfill_maximum_radius:
+tntfill_maximum_amount:
+tntfill_mod:
+tntfill_description:
+
+    //UNBAN
+unban_description:
+unban_not_banned:
+unban_target_in_other_faction:
+unban_unbanned:
+unban_target_unbanned:
+
+    //UNCLAIM
+unclaim_safezone_success:
+unclaim_safezone_nopermission:
+unclaim_warzone_success:
+unclaim_warzone_nopermission:
+unclaim_unclaimed:
+unclaim_unclaims:
+unclaim_log:
+unclaim_wrong_faction:
+unclaim_to_unclaim:
+unclaim_for_unclaiming:
+unclaim_faction_unclaim:
+unclaim_description:
+unclaim_click_to_unclaim:
+
+    //UNCLAIM ALL
+unclaimall_to_unclaim:
+unclaimall_for_unclaiming:
+unclaimall_unclaimed:
+unclaimall_log:
+unclaimall_description:
+
+    //VERSION
+version_name:
+version_version:
+version_description:
+
+    //WARZONE UNCLAIM ALL
+warzoneunclaimall_description:
+warzoneunclaimall_success:
+warzoneunclaimall_log:
+
+    //DRAIN
+drain_description:
+drain_no_players:
+drain_received_amount:
+drain_invalid_amount:
+
+    //WILD
+wild_description:
+wild_wait:
+wild_success:
+wild_interrupted:
+wild_failed:
+wild_in_progress:
+
+    //RULES
+rules_disabled_message:
+rules_description:
+rules_add_invalid_arguments:
+rules_add_success:
+rules_set_invalid_arguments:
+rules_set_success:
+rules_remove_invalid_arguments:
+rules_remove_success:
+rules_clear_success:
+
+    //FACTION GLOBAL CHAT
+fglobal_toggle:
+fglobal_description:
+
+    //MISSION
+mission_description:
+
+    //COMMAND
+command_help_invitations:
+
+    //BANNER
+banner_cannot_break:
+
+    //CHEST
+chest_item_denied_transfer:
+
+    //CHECK
+check_buffers_check:
+check_buffers_marked_check:
+check_buffers_check_gui_icon:
+check_buffers_unchecked_gui_icon:
+check_walls_check:
+check_walls_marked_checked:
+check_walls_checked_gui_icons:
+check_walls_unchecked_gui_icons:
+check_already_checked:
+check_no_checks:
+check_history_gui_title:
+check_history_gui_icon:
+check_settings_gui_title:
+check_wall_check_gui_icon:
+check_buffer_check_gui_icon:
+check_check_lore_line:
+check_time_lore_line:
+check_player_lore_line:
+check_must_be_minimum_coleader:
+check_leaderboard_header:
+check_leaderboard_line:
+check_leaderboard_no_data:
+
+    //WEEWOO
+weewoo_message:
+
+    //WEEWOO
+weewoo_already_started_discord:
+weewoo_already_started_ingame:
+weewoo_already_stopped_discord:
+weewoo_started_discord:
+weewoo_stopped_discord:
+
+    //INVITE
+invite_bot_usage:
+
+    //SET
+set_guild_id_usage:
+set_guid_id_success:
+set_guild_id_invalid_id:
+set_guild_id_unable_to_message_guild_owner:
+set_guild_id_timed_out_minecraft:
+set_guild_id_timed_out_discord:
+set_guild_id_guild_already_linked:
+set_guild_id_reset_id:
+set_guild_id_messaging_owner:
+
+    //CANT
+cannot_force_set_guild_id:
+
+    //DISCORD
+discord_link_required:
+discord_link_success:
+discord_code_sent:
+discord_code_invalid_key:
+discord_code_invalid_format:
+discord_already_linked:
+discord_player_discord:
+
+    //FRIENDLY FIRE
+friendly_fire_off_attacker:
+friendly_fire_you_must:
+
+    //BANKNOTE
+banknote_withdraw_not_enough_money:
+banknote_withdraw_no_arguments:
+
+    //XPBOTTLE
+xpbottle_not_enough:
+xpbottle_withdraw_no_arguments:
+
+    //PAYPALSEE
+paypalsee_player_paypal:
+
+    //SHOP
+shop_not_enough_points:
+shop_error_during_purchase:
+shop_bought_broadcast_faction:
+
+    //LEAVE
+leave_pass_admin:
+leave_negative_power:
+leave_to_leave:
+leave_for_leaving:
+leave_left:
+leave_disbanded:
+leave_disbanded_log:
+leave_description:
+
+    //AUTOLEAVE
+autoleave_admin_promoted:
+
+    //CLAIM
+claim_protected:
+claim_disabled:
+claim_cannot_claim:
+claim_already_owned:
+claim_must_be:
+claim_members:
+claim_safezone:
+claim_warzone:
+claim_power:
+claim_limit:
+claim_ally:
+claim_contiguous:
+claim_faction_contiguous:
+claim_peaceful:
+claim_peaceful_target:
+claim_owner_strong_to_keep_it:
+claim_border:
+claim_to_claim:
+claim_for_claiming:
+claim_to_overclaim:
+claim_for_overclaiming:
+claim_radius_claim:
+claim_claimed:
+claim_claimed_log:
+claim_overclaim_disabled:
+claim_too_close_to_another_faction:
+claim_outside_world_border:
+claim_outside_border_buffer:
+claim_click_to_claim:
+claim_map_outside_border:
+claim_you_are_here:
+claim_no_territory_permission:
+
+    //GENERIC
+generic_you:
+generic_your_faction:
+generic_nopermission:
+generic_action_nopermission:
+generic_faction_permission_nopermission:
+generic_faction_permission_owner_nopermission:
+generic_do_that:
+generic_no_player_match:
+generic_no_player_found:
+generic_arguments_too_short:
+generic_arguments_too_many:
+generic_default_description:
+generic_owners:
+generic_public_land:
+generic_factionless:
+generic_server_admin:
+generic_server:
+generic_disabled:
+generic_enabled:
+generic_infinity:
+generic_null_player:
+generic_console_only:
+generic_player_only:
+generic_ask_your_leader:
+generic_you_should:
+generic_you_may_want:
+generic_translation_version:
+generic_translation_contributors:
+generic_translation_responsible:
+generic_faction_tag_blacklist:
+generic_faction_tag_too_short:
+generic_faction_tag_too_long:
+generic_faction_tag_alphanumeric:
+generic_placeholder:
+generic_not_enough_money:
+generic_money_taken:
+generic_no_faction_found:
+generic_you_must_be:
+generic_members_only:
+generic_worldguard:
+
+    //MISSION
+mission_mission_started:
+mission_mission_active:
+mission_mission_maximum_allowed:
+mission_mission_all_completed:
+mission_mission_finished:
+mission_mission_cancelled:
+mission_mission_already_completed:
+
+    //PLAYER
+player_not_found:
+player_cannot_hurt:
+player_safezone_auto:
+player_warzone_auto:
+player_ouch:
+player_use_wilderness:
+player_use_safezone:
+player_use_warzone:
+player_use_territory:
+player_use_owned:
+player_command_warzone:
+player_command_neutral:
+player_command_enemy:
+player_command_permanent:
+player_command_ally:
+player_command_wilderness:
+player_power_no_loss_peaceful:
+player_power_no_loss_world:
+player_power_no_loss_wilderness:
+player_power_no_loss_warzone:
+player_power_loss_warzone:
+player_power_now:
+player_pvp_login:
+player_pvp_require_faction:
+player_pvp_factionless:
+player_pvp_peaceful:
+player_pvp_neutral:
+player_pvp_cannot_hurt:
+player_pvp_neutral_fail:
+player_pvp_tried:
+
+    //PLACEHOLDER
+placeholder_role_name:
+placeholder_custom_faction:
+
+    //WARBANNER
+warbanner_no_faction:
+warbanner_cooldown:
+warbanner_invalid_location:
+
+    //COMPASS
+compass_short_north:
+compass_short_east:
+compass_short_south:
+compass_short_west:
+
+    //CHAT
+chat_mod:
+chat_faction:
+chat_alliance:
+chat_truce:
+chat_public:
+
+    //ECON
+economy_off:
+economy_format:
+economy_money_transferred_from:
+economy_player_gave_money_to:
+economy_player_took_money_from:
+economy_disabled:
+economy_over_balance_capacity:
+economy_money_lost:
+economy_cannot_afford:
+economy_unable_to_transfer:
+economy_player_balance:
+economy_deposit_failed:
+economy_cannot_control_money:
+economy_money_transferred_from_player_to_player:
+
+    //RELATION
+relation_member_singular:
+relation_member_plural:
+relation_ally_singular:
+relation_ally_plural:
+relation_truce_singular:
+relation_truce_plural:
+relation_neutral_singular:
+relation_neutral_plural:
+relation_enemy_singular:
+relation_enemy_plural:
+
+    //ROLE
+role_leader:
+role_coleader:
+role_moderator:
+role_normal:
+role_recruit:
+
+    //REGION
+region_safezone:
+region_warzone:
+region_wilderness:
+region_peaceful:
+
+    //SHIELD
+shield_currently_enabled:
+shield_currently_not_enabled:
+shield_not_set:
+
+    //RANDOM STUFF AT THE END
+no_pages:
+invalid_page:
+title:
+wilderness:
+wilderness_description:
+warzone:
+warzone_description:
+safezone:
+safezone_description:
+toggle_scoreboard:
+faction_leave:
+faction_announcement_top:
+faction_announcement_bottom:
+default_prefix:
+faction_login:
+faction_logout:
+no_faction_prefix:
+date_format:
+raidable_true:
+raidable_false:
+
+    //WARMUPS
+warmups_notify_flight:
+warmups_notify_teleport:
+warmups_already:
+warmups_cancelled:
+
+    //PLACEHOLDER API
+placeholderapi_null:
+
+    //GRACE DISABLED PLACEHOLDER
+grace_disabled_placeholder:

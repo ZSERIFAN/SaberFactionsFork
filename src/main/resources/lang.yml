@@ -1,0 +1,1154 @@
+# SaberFactions fork language file.
+# Edited by Troi & coded by thmihnea
+
+root:
+  AUTHOR: misc
+  RESPONSIBLE: misc
+  LANGUAGE: English
+  ENCODING: UTF-8
+  LOCALE: en_US
+  REQUIRESUNICODE: 'false'
+  DEFAULT: 'true'
+  STATE: complete
+  LOCAL:
+    AUTHOR: misc
+    RESPONSIBLE: misc
+    LANGUAGE: English
+    REGION: US
+    STATE: complete
+actions_nopermission: '{faction} does not allow you to {action}'
+actions_nopermissionpain: 'It is painful to try to {action} in the territory of {faction}'
+actions_ownedterritorydeny: 'You cant do that in this territory, it is owned by {owners}'
+actions_ownedterritorypaindeny: 'It is painful to try to {action} in this territory, it is owned by {owners}'
+actions_mustbe: Youmust be {role} to {action}.
+actions_nosamerole: '{role} can''t control each other...'
+actions_nofaction: You are not member of any faction.
+action_denied_safezone: You can't use %1$s in safezone!
+action_denied_warzone: You can't use %1$s in warzone!
+action_denied_wilderness: You can't use %1$s in wilderness!
+action_denied_other: '%1$s does not allow you to %2$s here!'
+command_useage_template_color: '&c'
+command_help_nextcreate: Learn how to create a faction on the next page.
+command_help_invitations: 'You might want to close it and use invitations:'
+command_help_home: 'And don''t forget to set your home:'
+command_help_404: '&c&l» &7This page does &cnot &7exist'
+command_help_bank_1: Your faction has a bank which is used to pay for certain
+command_help_bank_2: things, so it will need to have money deposited into it.
+command_help_bank_3: To learn more, use the money command.
+command_help_playertitles: Player titles are just for fun. No rules connected to them.
+command_help_ownership_1: Claimed land with ownership set is further protected so
+command_help_ownership_2: that only the owner(s), faction admin, and possibly the
+command_help_ownership_3: faction moderators have full access.
+command_help_relations_1: Set the relation you WISH to have with another faction.
+command_help_relations_2: Your default relation with other factions will be neutral.
+command_help_relations_3: If BOTH factions choose "ally" you will be allies.
+command_help_relations_4: If ONE faction chooses "enemy" you will be enemies.
+command_help_relations_5: You can never hurt members or allies.
+command_help_relations_6: You can not hurt neutrals in their own territory.
+command_help_relations_7: You can always hurt enemies and players without faction.
+command_help_relations_8: ''
+command_help_relations_9: Damage from enemies is reduced in your own territory.
+command_help_relations_10: When you die you lose power. It is restored over time.
+command_help_relations_11: The power of a faction is the sum of all member power.
+command_help_relations_12: The power of a faction determines how much land it can hold.
+command_help_relations_13: You can claim land from factions with too little power.
+command_help_permissions_1: Only faction members can build and destroy in their own
+command_help_permissions_2: 'territory. Usage of the following items is also restricted:'
+command_help_permissions_3: Door, Chest, Furnace, Dispenser, Diode.
+command_help_permissions_4: ''
+command_help_permissions_5: Make sure to put pressure plates in front of doors for your
+command_help_permissions_6: guest visitors. Otherwise they can't get through. You can
+command_help_permissions_7: also use this to create member only areas.
+command_help_permissions_8: As dispensers are protected, you can create traps without
+command_help_permissions_9: worrying about those arrows getting stolen.
+command_help_admin_1: "&a&l» &a/f claim safezone \n   &7claim land for the Safe Zone"
+command_help_admin_2: "&a&l» &a/f claim warzone \n   &7claim land for the War Zone"
+command_help_admin_3: "&a&l» &a/f autoclaim [safezone|warzone] \n   &7take a guess"
+command_help_moar_1: 'Finally some commands for the server admins:'
+command_help_moar_2: 'More commands for server admins:'
+command_help_moar_3: 'Even more commands for server admins:'
+command_help_description: |2-
+
+    &a&l» &7Display a &ahelp &7page
+command_near_description: Get nearby faction players in a radius.
+command_near_disabled_msg: '&cThis command is disabled!'
+command_near_format: '{playername} &c({distance}m)'
+command_near_use_msg: '&cFaction members nearby'
+command_context_administer_dif_faction: '&c[!] %1$s is not in the same faction as
+  you.'
+command_context_administer_admin_required: '&c[!] Only the faction admin can do that.'
+command_context_administer_same_rank_control: '&c[!] Moderators can''t control each
+  other...'
+command_context_administer_mod_required: '&c[!] You must be a faction moderator to
+  do that.'
+command_upgrades_description: '&cOpen the Upgrades Menu'
+command_upgrades_points_taken: '&cFaction upgrade purchased for &e%1$s points! &cNew
+  Point Balance: &e%2$s'
+command_upgrades_not_enough_points: '&cYour faction does not have enough points to
+  purchase this upgrade!'
+command_upgrades_disabled: '&c[!] &7Faction Upgrades are &cdisabled&7.'
+command_corner_cant_claim: '&c&l[!] &cYou may not claim this corner!'
+command_corner_claimed: |2
+
+  &2&l[!] &aYou have claimed the corner successfully, totalling in &b%1$d &achunks!
+command_corner_attempting_claim: '&c&l[!] &7Attempting to claim corner...'
+command_corner_fail_with_feedback: '&c&l[!] &cOne or more claims in this corner could
+  not be claimed! Total chunks claimed:&b '
+command_corner_not_corner: '&c&l[!] &7You must be in a corner to use this command!'
+command_corner_description: claim a corner at world border
+command_cornerlist_description: list of all corners
+command_admin_notmember: '&c&l[!] &7%1$s &cis not a member in your faction.'
+command_admin_notadmin: '&c&l[!] &cYou are not the faction admin.'
+command_admin_targetself: '''&c&l[!] &cThe target player musn''''t be yourself.'
+command_admin_demotes: '&c&l[!] &cYou have demoted &7%1$s &cfrom the position of faction
+  admin.'
+command_admin_demoted: '&c&l[!] &cYou have been demoted from the position of faction
+  admin by &7%1$s&c'
+command_admin_promotes: '&c&l[!] &7You have promoted &c%1$s &7to the position of faction
+  admin.'
+command_admin_promoted: '&c&l[!] &c%1$s &7gave &c%2$s &7the leadership of &c%3$s&7.'
+command_admin_description: Hand over your admin rights
+command_admin_nomembers: '&e&l[!] &cNo one else to promote, please disband faction.'
+command_ahome_description: Send a player to their f home no matter what.
+command_ahome_nohome: '%1$s doesn''t have an f home.'
+command_ahome_success: '%1%s was sent to their f home.'
+command_ahome_offline: '%1$s is offline.'
+command_ahome_target: You were sent to your f home.
+command_announce_description: Announce a message to players in faction.
+command_alts_description: Faction Alts Commands
+command_alts_list_description: List all alts in your faction
+command_freecam_enemyinradius: Freecam disabled, An enemy is closeby!
+command_freecam_outsideflight: Please dont leave the flight radius!
+command_freecam_enabled: Freecam is now enabled!
+command_freecam_disabled: Freecam is now disabled
+command_freecam_description: Go into spectator mode
+command_autoclaim_enabled: '&c&l[!] &7Now &cauto-claiming&7 land for %1$s.'
+command_autoclaim_disabled: '&c&l[!] Auto-claiming&7 of land is now &cdisabled.'
+command_autoclaim_requiredrank: '&c&l[!] &7You must be &c%1$s&7 to claim land.'
+command_autoclaim_otherfaction: '&c&l[!]&7 You &ccan''t &7claim land for &c%1$s&7.'
+command_autoclaim_description: Auto-claim land as you walk around
+command_altinvite_description: Invite Alts to your faction.
+command_altkick_description: Kick alts from your faction
+command_altkick_notalt: '&c&l[!] &7Player is not an alt.'
+command_altkick_notmember: '&c&l[!] &7This player is not a member of your faction.'
+command_alts_list_noalts: '&c&l[!] &7%s does not have any alts in their faction!'
+command_autohelp_helpfor: Help for command "
+command_home_other_notset: '&c&l[!] &7%s does not have their faction home set!'
+command_home_teleport_other: '&c&l[!] &7You have teleported to %s''s faction home!'
+command_shop_description: opens shop gui
+command_ban_description: Ban players from joining your Faction.
+command_ban_target: '&c&l[!] &7You were &cbanned &7from &c%1$s'
+command_ban_banned: '&c&l[!] &7%1$s &cbanned &7%2$s'
+command_ban_self: '&c&l[!] &7You may &cnot &7ban &cyourself&7.'
+command_ban_insufficientrank: '&c&l[!] &7Your &crank &7is too low to&c ban &7%1$s'
+command_ban_alreadybanned: '&c&l[!] &7This player is &calready banned&7!'
+command_banlist_description: View a Faction's ban list
+command_banlist_header: '&c&l[!] &7There are &c%d&7 bans for &c%s'
+command_banlist_entry: '&7%d. &c%s &r&7// &c%s &r&7// &c%s'
+command_banlist_nofaction: '&c&l[!] &7You are &cnot &7in a Faction.'
+command_banlist_invalid: '&c&l[!] &7The faction &c%s &7does not exist'
+command_boom_peacefulonly: '&c&l[!] &7This command is &conly &7usable by factions
+  which are &cspecifically &7designated as &cpeaceful&7.'
+command_boom_totoggle: to toggle explosions
+command_boom_fortoggle: for toggling explosions
+command_boom_enabled: '&c&l[!] &c%1$s&7 has&c %2$s&7 explosions in your faction''s
+  territory.'
+command_boom_description: Toggle explosions (peaceful factions only)
+command_bypass_enable: '&e&l[!] &eYou have enabled admin bypass mode. You will be
+  able to build or destroy anywhere.'
+command_bypass_enablelog: ' has ENABLED admin bypass mode.'
+command_bypass_disable: '&c&l[!] &cYou have disabled admin bypass mode.'
+command_bypass_disablelog: ' has DISABLED admin bypass mode.'
+command_bypass_description: Enable admin bypass mode
+command_banner_description: Turn a held banner into a war banner
+banner_cannot_break: '&c&l[!] &7You may not break a faction banner!'
+command_banner_nobanner: '&c&l[!] &cPlease set a banner using /f setbanner'
+command_banner_notenoughmoney: '&c&l[!] &7You do&c not&7 have enough money'
+command_banner_moneytake: '&c&l[!] $&c{amount} &7has been taken from your account.'
+command_banner_success: '&c&l[!] &7You have created a &c&lWarBanner!'
+command_banner_disabled: '&c&l[!] &7Buying&c warbanners&7 is &cdisabled!'
+command_tpbanner_notset: '&c&l[!] &7Your faction &cdoes not &7have a &c&lWarBanner
+  &7placed!'
+command_tpbanner_success: '&c&l[!] &cTeleporting &7to your factions''s &c&lWarBanner'
+command_tpbanner_description: Teleport to your faction banner
+command_chat_disabled: '&c&l[!] &7The built in chat channels are &cdisabled &7on this
+  server.'
+command_chat_invalidmode: '&c&l[!] &cUnrecognised &7chat mode. Please enter either
+  ''&da&7'',''&af&7'',''&6m&7'' or ''&fp&7'''
+command_chat_description: Change chat mode
+command_chat_mode_public: '&c&l[!] &fPublic &7chat mode.'
+command_chat_mode_alliance: '&c&l[!] &dAlliance &7only chat mode.'
+command_chat_mode_truce: '&c&l[!] &5Truce &7only chat mode.'
+command_chat_mode_faction: '&c&l[!] &aFaction&7 only chat mode.'
+command_chat_mode_mod: '&c&l[!] &dMod &7only chat mode.'
+command_chat_mod_only: '&c&l[!] &7Only Mods can talk through this chat mode.'
+command_chatspy_enable: '&c&l[!] &7You have &cenabled &7chat spying mode.'
+command_chatspy_enablelog: ' has ENABLED chat spying mode.'
+command_chatspy_disable: '&c&l[!] &7You have &cdisabled &7chat spying mode.'
+command_chatspy_disablelog: ' has DISABLED chat spying mode.'
+command_chatspy_description: Enable admin chat spy mode
+command_claim_invalidradius: '&c&l[!]&7 If you specify a &cradius&7, it must be at
+  least &c1&7.'
+command_claim_denied: '&c&l[!]&7 You &cdo not &7have &cpermission&7 to &cclaim&7 in
+  a radius.'
+command_claim_description: Claim land from where you are standing
+command_claimfill_description: Claim land filling in a gap in claims
+command_claimfill_abovemax: '&cThe maximum limit for claim fill is %s.'
+command_claimfill_alreadyclaimed: '&cCannot claim fill using already claimed land!'
+command_claimfill_toofar: '&cThis fill would exceed the maximum distance of %.2f'
+command_claimfill_pastlimit: '&cThis claim would exceed the limit!'
+command_claimfill_notenoughlandleft: '%s &cdoes not have enough land left to make
+  %d claims'
+command_claimfill_toomuchfail: '&cAborting claim fill after %d failures'
+command_claimline_invalidradius: '&c&l[!]&7 If you &cspecify&7 a distance, it must
+  be at least &c1&7.'
+command_claimline_denied: '&c&l[!]&7 You &cdo not &7have&c permission&7 to claim in
+  a line.'
+command_claimline_description: Claim land in a straight line.
+command_claimline_abovemax: '&c&l[!]&7 The &cmaximum&7 limit for claim line is &c%s&7.'
+command_claimline_notvalid: '&c&l[!]&7 &c%s&7 is not a &ccardinal &7direction. You
+  may use &cnorth&7, &ceast&7, &csouth &7or &cwest&7.'
+chest_item_denied_transfer: '&c&l[!] &7You may not transfer &b%1$s &7into your factions
+  chest!'
+command_config_noexist: '&c&l[!]&7 No configuration setting "&c%1$s&7" exists.'
+command_config_set_true: '" option set to true (enabled).'
+command_config_set_false: '" option set to false (disabled).'
+command_config_optionset: '" option set to '
+command_config_colourset: '" color option set to "'
+command_config_intrequired: 'Cannot set "%1$s": An integer (whole number) value required.'
+command_config_longrequired: 'Cannot set "%1$s": A long integer (whole number) value
+  required.'
+command_config_doublerequired: 'Cannot set "%1$s": A double (numeric) value required.'
+command_config_floatrequired: 'Cannot set "%1$s": A float (numeric) value required.'
+command_config_invalid_colour: 'Cannot set "%1$s": "%2$s" is not a valid color.'
+command_config_invalid_collection: '"%1$s" is not a data collection type which can
+  be modified with this command.'
+command_config_invalid_material: 'Cannot change "%1$s" set: "%2$s" is not a valid
+  material.'
+command_config_invalid_typeset: '"%1$s" is not a data type set which can be modified
+  with this command.'
+command_config_material_added: '"%1$s" set: Material "%2$s" added.'
+command_config_material_removed: '"%1$s" set: Material "%2$s" removed.'
+command_config_set_added: '"%1$s" set: "%2$s" added.'
+command_config_set_removed: '"%1$s" set: "%2$s" removed.'
+command_config_log: ' (Command was run by %1$s.)'
+command_config_error_setting: Error setting configuration setting "%1$s" to "%2$s".
+command_config_error_matching: Configuration setting "%1$s" couldn't be matched, though it should be... please report this error.
+command_config_error_type: '''%1$s'' is of type ''%2$s'', which cannot be modified
+  with this command.'
+command_config_description: Change a conf.json setting
+command_convert_backend_running: '&c&l[!]&7 Already running that backend.'
+command_convert_backend_invalid: '&c&l[!]&7 Invalid backend'
+command_convert_description: Convert the plugin backend
+command_coords_message: '&c&l[!] &7{player}&7''s coords are &c{x}&7,&c{y}&7,&c{z}&7
+  in &c{world}'
+command_coords_description: broadcast your coords to your faction
+command_checkpoint_disabled: '&c&l[!]&7 You &ccannot&7 use checkpoint while its&c
+  disabled&7!'
+command_checkpoint_set: '&c&l[!]&7 You have &cset&7 the &cfaction checkpoint&7 at
+  your &cLocation&7.'
+command_checkpoint_go: '&c&l[!]&7 &cTeleporting&7 to &cfaction checkpoint'
+command_checkpoint_invalidlocation: '&c&l[!]&7 &cInvalid Location!&7 You can &cset&7
+  checkpoints in &cyour claims&7 or &2wilderness&7.'
+command_checkpoint_not_set: '&c&l[!]&7 You have to &cset &7the &cfaction checkpoint&7
+  first.'
+command_checkpoint_claimed: '&c&l[!]&7 Your current &cfaction checkpoint&7 is claimed,
+  set a &cnew &7one!'
+command_checkpoint_description: Set or go to your faction checkpoint!
+command_create_already_reserved: '&c&l[!] &7This faction tag has already been reserved!'
+command_create_mustleave: '&c&l[!]&7 You must &cleave &7your &ccurrent faction &7first.'
+command_create_inuse: '&c&l[!]&7 That tag is &calready &7in use.'
+command_create_tocreate: to create a new faction
+command_create_forcreate: for creating a new faction
+command_create_error: '&c&l[!]&7 There was an &cinternal error&7 while trying to create
+  your faction. &cPlease try again&7.'
+command_create_created: '&c&l[!]&7 &c%1$s &7created a new faction named &c&l%2$s&7.'
+command_create_youshould: '&c&l[!]&7 You should now: &c%1$s'
+command_create_createdlog: ' created a new faction: '
+command_create_description: Create a new faction
+command_delhome_success: '%1$s has deleted your faction home'
+command_delhome_description: delete home of your faction
+command_check_description: manage your factions check system!
+check_buffers_check: "\n &c&lFaction Walls&7 » &bCheck Your Buffers! \n"
+check_walls_check: "\n &c&lFaction Walls&7 » &bCheck Your Walls! \n"
+check_already_checked: '&c&lFaction Settings&7 » &bWalls have already been checked'
+check_no_checks: '&c&lFaction Walls&7 » &bNothing to Check!'
+check_walls_marked_checked: '&c&lFaction Walls&7 » &aMarked walls as checked'
+check_buffers_marked_checked: '&c&lFaction Walls&7 » &aMarked buffers as checked'
+check_history_gui_title: '&aCheck History'
+check_settings_gui_title: '&a&lManage Check Settings'
+check_wall_check_gui_icon: '&a&lWall Check Settings'
+check_buffer_check_gui_icon: '&a&lBuffer Check Settings'
+check_check_lore_line: '&bCheck: &a%1$s'
+check_walls_checked_gui_icon: '&aWalls checked'
+check_buffers_checked_gui_icon: '&aBuffers checked'
+check_walls_unchecked_gui_icon: '&cWalls unchecked'
+check_buffers_unchecked_gui_icon: '&cBuffers unchecked'
+check_time_lore_line: '&bTime: &f%1$s'
+check_player_lore_line: '&bPlayer: &f%1$s'
+check_history_gui_icon: '&bCheck history'
+check_must_be_atleast_coleader: '&cYou must be atleast &dCo Leader &cto access &fcheck
+  settings'
+wee_woo_message: '&c&lFaction WeeWoo&7 » We Are Being Raided!'
+command_weewoo_started: '&c&lFaction WeeWoo&7 » &aWeewoo started by %1$s'
+command_weewoo_stopped: '&c&lFaction WeeWoo&7 » &aWeewoo stopped by %1$s'
+command_weewoo_already_started: '&cWeewoo already started'
+command_weewoo_already_stopped: '&cWeewoo already stopped'
+command_weewoo_description: notifies all faction members you are being raided
+check_leaderboard_header: '&8---- Check Leaderboard ----'
+check_leaderboard_line: '&f%1$s. &d%2$s: &f%3$s (%4$s Buffer, %5$s Walls)'
+check_leaderboard_no_data: '&8No data'
+command_discord_description: Link your Discord account
+command_debug_description: Print debugging info to console
+command_debug_printed: '&c&l[!]&7 Debug info has been printed to console'
+command_deinvite_candeinvite: '&c&l[!]&7 Players you can &cdeinvite: '
+command_deinvite_clicktodeinvite: '&c&l[!]&7 Click to &crevoke&7 invite for &c%1$s'
+command_deinvite_alreadymember: '&c&l[!]&7 &c%1$s&7 is already a member of &c%2$s'
+command_deinvite_mightwant: '&c&l[!]&7 You might want to: &c%1$s'
+command_deinvite_revoked: '&c&l[!]&7 &7%1$s &crevoked&7 your invitation to &c%2$s&7.'
+command_deinvite_revokes: '&c&l[!]&7 %1$s&c revoked &7%2$s''s&c invitation.'
+command_deinvite_description: Remove a pending invitation
+command_delfwarp_deleted: '&c&l[!]&7 Deleted warp &c%1$s'
+command_delfwarp_invalid: '&c&l[!]&7 Couldn''t &cfind&7 warp &c%1$s'
+command_delfwarp_todelete: to delete warp
+command_delfwarp_fordelete: for deleting warp
+command_delfwarp_description: Delete a faction warp
+command_description_changes: '&c&l[!]&7 You have &cchanged&7 the &cdescription&7 for
+  &c%1$s&7 to:'
+command_description_changed: '&c&l[!]&7 The faction&c %1$s&7 changed their &cdescription
+  &7to:'
+command_description_tochange: to change faction description
+command_description_forchange: for changing faction description
+command_description_description: Change the faction description
+command_disband_immutable: '&c&l[!]&7 &7You &ccannot&7 disband &2Wilderness&7,&e SafeZone&7,
+  or &4WarZone.'
+command_disband_too_young: '&c&l[!] &7Your Faction is too young to withdraw money
+  like this!'
+command_disband_markedpermanent: '&c&l[!]&7 This faction is designated as&c permanent&7,
+  so you cannot disband it.'
+command_disband_broadcast_yours: '&c&l[!]&7 &c%1$s&7 disbanded your &cfaction.'
+command_disband_broadcast_generic: '&c&l[!]&7 The Faction &c%1$s&7 was disbanded.'
+command_disband_broadcast_notyours: '&c&l[!]&7 &c%1$s &7disbanded the faction &c%2$s&7.'
+command_disband_holdings: '&c&l[!]&7 &7You have been given the disbanded &cfaction''s
+  bank&7, totaling &c%1$s.'
+command_disband_player: '&c&l[!] &7You have disbanded your &cfaction'
+command_disband_confirm: '&c&l[!]&7 Your Faction has&c {tnt} &7tnt left in the bank,
+  it will be &clost&7 if the faction is &cdisbanded&7. Type&c /f disband &7again within
+  &c10&7 seconds to&c disband&7.'
+command_disband_description: Disband a faction
+command_fly_disabled: '&c&l[!]&7 Sorry, Faction flight is &cdisabled &7on this server.'
+command_fly_description: Enter or leave Faction flight mode
+command_fly_change: '&c&l[!]&7 Faction flight has been &c%1$s&7.'
+command_fly_cooldown: '&c&l[!]&7 You will &cnot&7 take fall damage for &c{amount}&7
+  seconds.'
+command_fly_damage: '&c&l[!]&7 Faction flight &cdisabled&7 due to entering combat.'
+command_fly_no_access: '&c&l[!]&7 &cCannot fly &7in territory of %1$s'
+command_fly_enemy_near: '&c&l[!]&7 Flight has been&c disabled&7 an enemy is nearby.'
+command_fly_check_enemy: '&c&l[!]&7 Cannot fly here, an enemy is &cnearby&7.'
+command_fly_no_epearl: '&c&l[!] &7You &ccannot&7 throw enderpearls while flying!'
+command_fly_auto: '&eFaction auto flight &d%1$s'
+command_focus_samefaction: '&c[!] You may not focus players in your faction!'
+command_focus_focusing: '&c&l[!] &7Your faction is now focusing &c%s'
+command_focus_no_longer: '&c&l[!] &7Your faction is no longer focusing &c%s'
+command_focus_description: Focus a Specific Player
+command_friendly_fire_description: Toggle friendly fire for yourself.
+command_friendly_fire_toggle_off: '&c[!] &7You have toggled friendly fire &4off&7!'
+command_friendly_fire_toggle_on: '&c[!] &7You have toggled friendly fire &aon&7!'
+friendly_fire_off_attacker: '&b%1$s &7has friendly fire toggle &4off&7!'
+friendly_fire_you_must: '&c[!] &7You must have friendly fire active to attack faction
+  members!'
+command_fwarp_clicktowarp: '&c&l[!]&7 Click to &cwarp!'
+command_fwarp_commandformat: '&c&l[!]&7 /f warp <warpname> &c[password]'
+command_fwarp_warped: '&c&l[!]&7 Warped to &c%1$s'
+command_fwarp_invalid_warp: '&c&l[!]&7 Couldn''t find warp &c%1$s'
+command_fwarp_towarp: to warp
+command_fwarp_forwarping: for warping
+command_fwarp_warps: 'Warps: '
+command_fwarp_description: Teleport to a faction warp
+command_fwarp_invalid_password: '&c&l[!]&7 &cInvalid password!'
+command_fwarp_password_required: '&c&l[!]&c Warp Password:'
+command_fwarp_password_timeout: '&c&l[!]&7 Warp password &ccanceled'
+command_grace_time_remaining: '&c&lGracePeriod &8» &cTime Remaining: &b%1$s'
+command_grace_disabled_no_format: '&c[!] &7Grace is disabled! Explosions are allowed!'
+command_grace_enabled_format: '&c&lGracePeriod &8» &7Grace Period Has Now &aStarted&7!
+  &cTime Remaining: &b%1$s'
+command_grace_disabled_format: '&c&lGracePeriod &8» &7Grace Period Has Now &cEnded&7!
+  &cExplosions are now enabled!'
+command_grace_description: Toggles Grace Period on/off
+command_grace_enabled_placement: '&cYou cannot place &e%s &cwhile grace period is
+  active!'
+command_hint_permission: '&aYou can manage your factions permissions using &7/f perms'
+command_home_disabled: '&c&l[!]&7 Sorry, Faction homes are &cdisabled on this server.'
+command_home_teleportdisabled: '&c&l[!]&7 Sorry, the ability to &cteleport &7to Faction
+  homes is &cdisabled &7on this server.'
+command_home_nohome: '&c&l[!]&7 Your faction does &cnot &7have a home. '
+command_home_unset: '&c&l[!]&7 Sorry, your faction home has been &cun-set &7since
+  it is no longer in your territory.'
+command_home_inenemy: '&c&l[!]&7 You &ccannot teleport &7to your &cfaction home&7
+  while in the territory of an &cenemy faction&7.'
+command_home_wrongworld: '&c&l[!]&7 You &ccannot &7teleport to your &cfaction home&7
+  while in a different world.'
+command_home_enemynear: '&c&l[!]&7 You &ccannot teleport&7 to your faction home while
+  an enemy is within &c%s&7 blocks of you.'
+command_home_toteleport: to teleport to your faction home
+command_home_forteleport: for teleporting to your faction home
+command_home_description: Teleport to the faction home
+command_home_blocked: '&c&l[!] You may not teleport to a home that is claimed by &b%1$s'
+command_inventorysee_description: View a faction members inventory
+command_inspect_disabled_msg: '&c&l[!]&7 Inspect mode is now &cdisabled.'
+command_inspect_disabled_nofac: '&c&l[!]&7 Inspect mode is now &cdisabled,&7 because
+  you &cdo not have a faction!'
+command_inspect_enabled: '&c&l[!]&7 Inspect mode is now &aEnabled.'
+command_inspect_header: '&c&m---&7Inspect Data&c&m---&c//&7x:{x},y:{y},z:{z}'
+command_inspect_row: '&c{time} &7// &c{action} &7// &c{player} &7// &c{block-type}'
+command_inspect_nodata: '&c&l[!]&7 &7No Data was found!'
+command_inspect_notinclaim: '&c&l[!]&7 &7You can &conly&7 inspect in &cyour &7claims!'
+command_inspect_bypass: '&c&l[!]&7 Inspecting in &cbypass&7 mode'
+command_inspect_description: Inspect blocks!
+command_invite_toinvite: to invite someone
+command_invite_forinvite: for inviting someone
+command_invite_clicktojoin: Click to join!
+command_invite_invitedyou: '&l[!]&7 &c%1$s&7 has invited you to join &c%2$s&7'
+command_invite_invited: '&c&l[!]&7 &c%1$s&7 invited &c%2$s&7 to your faction.'
+command_altinvite_invited_alt: '&c&l[!]&7 &c%1$s&7 invited &c%2$s&7 to your faction
+  as an alt.'
+command_invite_alreadymember: '&c&l[!]&7 &c%1$s&7 is already a member of&c %2$s'
+command_invite_alreadyinvited: '&c&l[!]&7 &c%1$s&7 has already been invited'
+command_invite_description: Invite a player to your faction
+command_invite_banned: '&c&l[!]&7 &7%1$s &cis banned &7from your Faction. &cNot &7sending
+  an invite.'
+banknote_withdraw_not_enough: '&c&l[!] &7You do not have enough money!'
+banknote_withdraw_no_args: '&c&l[!] &7Try /withdraw <amount>'
+xpbottle_not_enough: '&c&l[!] &7You do not have enough experience!'
+xpbottle_withdraw_no_args: '&c&l[!] &7Try /bottle <amount>'
+command_join_cannotforce: '&c&l[!]&7 You&c do not&7 have permission to &cmove other
+  players&7 into a faction.'
+command_join_systemfaction: '&c&l[!]&7 Players may only join &cnormal factions&7.
+  This is a &c&lsystem faction&7.'
+command_join_alreadymember: '&c&l[!]&7 &c%1$s %2$s already a member of&c %3$s'
+command_join_atlimit: ' &c&l[!]&7 The faction &c%1$s &7is at the limit of&c %2$d&7
+  members, so&c %3$s&7 cannot currently join.'
+command_join_atlimit_alts: ' &c&l[!]&7 The faction &c%1$s &7is at the limit of&c %2$d&7
+  alts, so&c %3$s&7 cannot currently join.'
+command_join_inotherfaction: '&c&l[!]&7 &c%1$s &7must leave&c %2$s &7current faction
+  first.'
+command_join_negativepower: '&c&l[!]&7 &c%1$s &7cannot join a faction with a &cnegative
+  power&7 level.'
+command_join_requiresinvitation: '&c&l[!]&7 This faction &crequires&7 an invitation.'
+command_join_attemptedjoin: '&c&l[!]&7 &c%1$s&7 tried to join your faction.'
+command_join_tojoin: to join a faction
+command_join_forjoin: for joining a faction
+command_join_success: '&c&l[!]&7 &c%1$s &7successfully joined &c%2$s.'
+command_join_moved: '&c&l[!]&7 &c%1$s &7moved you into the faction&c %2$s.'
+command_join_joined: '&c&l[!]&7 &c%1$s &7joined your faction.'
+command_join_joinedlog: '&c&l[!]&7 &c%1$s&7 joined the faction&c %2$s.'
+command_join_movedlog: '&c&l[!]&7 &c%1$s &7moved the player&c %2$s &7into the faction&c
+  %3$s&7.'
+command_join_description: '&a&l» &7Join a faction'
+command_join_banned: '&c&l[!]&7 You are &cbanned &7from &c%1$s.'
+command_kick_candidates: '&c&l[!]&7 Players you can kick: '
+command_kick_clicktokick: 'Click to kick '
+command_kick_self: '&c&l[!]&7 You &ccannot &7kick&c yourself&7.'
+command_kick_none: '&c&l[!]&7 That player&c is not&7 in a faction.'
+command_kick_notmember: '&c&l[!]&7 &c%1$s is not a member of %2$s'
+command_kick_insufficientrank: '&c&l[!]&7 Your rank is &ctoo low &7to kick this player.'
+command_kick_negativepower: '&c&l[!]&7 You &ccannot &7kick that member until their
+  power is &apositive&7.'
+command_kick_tokick: to kick someone from the faction
+command_kick_forkick: for kicking someone from the faction
+command_kick_faction: '&c&l[!]&7 %1$s&7 kicked %2$s&c from the faction!'
+command_kick_kicks: '&c&l[!]&7 You kicked &c%1$s&7 from the faction&c %2$s&7!'
+command_kick_kicked: '&c&l[!]&7 &c%1$s &7kicked you from&c %2$s&7!'
+command_kick_description: Kick a player from the faction
+command_list_factionlist: '&c&l[!]&7 Faction List '
+command_list_tolist: to list the factions
+command_list_forlist: for listing the factions
+command_list_onlinefactionless: 'Online factionless: '
+command_list_description: '&a&l» &7See a list of the factions'
+command_spam_enabled: '&c&l[!]&7 Factions Anti-Spam is now&a enabled'
+command_spam_disabled: '&c&l[!]&7 Factions Anti-Spam in now&c disabled'
+command_spam_description: enable antispam system
+command_lock_locked: '&c&l[!]&7 Factions is now&c locked'
+command_lock_unlocked: '&c&l[!]&7 Factions in now&a unlocked'
+command_lock_description: Lock all write stuff. Apparently.
+command_logins_toggle: '&c&l[!]&7 Set login / logout notifications for Faction members
+  to: &c%s'
+command_logins_description: Toggle(?) login / logout notifications for Faction members
+command_lowpower_header: '&8&m--------&8<Players with power under {maxpower}&8>&8&m---------'
+command_lowpower_format: '&c{player} &8(&c{player_power}&8/&c{maxpower}&8)'
+command_lowpower_description: Shows a list of players in your faction with lower power levels
+command_lookup_invalid: '&c&l[!] &cInvalid Faction Found!'
+command_lookup_faction_home: '&c&l[!] &cFaction Home: &f%1$dx %2$sy %3$sz'
+command_lookup_claim_count: '&c&l[!] &cFound &c&n%1$s &cClaimed Chunk(s) for &f%2$s'
+command_lookup_claim_list: '&f%1$s &7(%2$sx, %2$sz)'
+command_lookup_only_normal: '&cYou can only enter normal factions.'
+command_lookup_description: Lookup claim & home stats for faction
+command_map_toshow: to show the map
+command_map_forshow: for showing the map
+command_map_update_enabled: '&c&l[!]&7 Map auto update &aENABLED.'
+command_map_update_disabled: '&c&l[!]&7 Map auto update &cDISABLED.'
+command_map_description: Show the territory map, and set optional auto update
+command_mapheight_description: '&eUpdate the lines that /f map sends'
+command_mapheight_set: '&c&l[!]&7 Set /f map lines to &c&a%1$d'
+command_mapheight_current: '&c&l[!]&7 Current &cmapheight: &a%1$d'
+command_mod_candidates: '&c&l[!]&7 Players you can promote: '
+command_mod_clicktopromote: 'Click to promote '
+command_mod_notmember: '&c&l[!]&7 &c%1$s7 is not a member in your faction.'
+command_mod_notadmin: '&c&l[!]&7 You &care not&7 the faction admin.'
+command_mod_self: '&c&l[!]&7 The target player&c musn''t&7 be yourself.'
+command_mod_targetisadmin: '&c&l[!]&7 The target player is a &cfaction admin.&7 Demote
+  them first.'
+command_mod_revokes: '&c&l[!]&7 &7You have &cremoved&7 moderator status from &c%1$s.'
+command_mod_revoked: '&c&l[!]&7 &c%1$s&7 is &cno longer&7 moderator in your faction.'
+command_mod_promotes: '&c&l[!]&7 &c%1$s&7 was &cpromoted&7 to moderator in your faction.'
+command_mod_promoted: '&c&l[!]&7 You have promoted&c %1$s&7 to moderator.'
+command_mod_description: Give or revoke moderator rights
+command_coleader_candidates: '&c&l[!]&7 Players you can promote: '
+command_coleader_clicktopromote: 'Click to promote '
+command_coleader_notmember: '&c&l[!]&7 &c%1$s&7 is &cnot a member&7 in your faction.'
+command_coleader_notadmin: '&c&l[!]&7 You are&c not&7 the faction admin.'
+command_coleader_self: '&c&l[!]&7 The target player&c musn''t&7 be yourself.'
+command_coleader_targetisadmin: '&c&l[!]&7 The target player is a &cfaction admin&7.
+  Demote them first.'
+command_coleader_revokes: '&c&l[!]&7 You have removed &ccoleader &7status from&c %1$s&7.'
+command_coleader_revoked: '&c&l[!]&7 &c%1$s&7 is no longer&c coleader &7in your faction.'
+command_coleader_promotes: '&c&l[!]&7 &c%1$s&7 was promoted to &ccoleader &7in your
+  faction.'
+command_coleader_promoted: '&c&l[!]&7 You have &cpromoted &7%1$s to &ccoleader.'
+command_coleader_description: Give or revoke coleader rights
+command_convertconfig_description: Convert your SavageFactions config to SaberFactions
+command_convertconfig_success: '&cConfiguration successfully converted'
+command_convertconfig_fail: '&cConfiguration conversion failed!'
+command_convertconfig_failconfigmissing: '&cPlease ensure you have placed SavageFactions
+  files in a folder called SavageFactions'
+command_modifypower_added: '&c&l[!]&7 Added &c%1$f &7power to &c%2$s. &7New total
+  rounded power: &c%3$d'
+command_modifypower_description: Modify the power of a faction/player
+command_money_long: '&c&l[!]&7 The faction money commands.'
+command_money_description: Faction money commands
+command_money_cantafford: '&c&l[!]&7 &c%1$s&7 can''t afford &c%2$s&7 %3$s'
+command_money_gained: '&c&l[!]&7 &c%1$s&7 gained &c%2$s %2%6'
+command_moneybalance_short: show faction balance
+command_moneybalance_description: Show your factions current money balance
+command_moneydeposit_description: Deposit money
+command_moneydeposit_deposited: '&c&l[!]&7 &c%1$s &7deposited&c %2$s&7 in the faction
+  bank:&c %3$s'
+command_moneytransferff_description: Transfer f -> f
+command_moneytransferff_transfer: '&c&l[!]&7 &c%1$s&7 transferred&c %2$s &7from the
+  faction &c"%3$s"&7 to the faction&c "%4$s"&7'
+command_moneytransferff_transfercantafford: '&c&l[!]&7 &c%1$s&7 can''t afford to transfer
+  &c%2$s &7to %3$s'
+command_moneytransferfp_description: Transfer f -> plugin
+command_moneytransferfp_transfer: '&c&l[!]&7 &c%1$s &7transferred&c %2$s &7from the
+  faction&c "%3$s" &7to the player &c"%4$s"'
+command_moneytransferpf_description: Transfer plugin -> f
+command_moneytransferpf_transfer: '&c&l[!]&7 &c%1$s&7 transferred &c%2$s&7 from the
+  player &c"%3$s" &7to the faction&c "%4$s"'
+command_moneywithdraw_description: Withdraw money
+command_moneywithdraw_withdraw: '&c&l[!]&7 &c%1$s&7 withdrew&c %2$s &7from the faction
+  bank:&c %3$s'
+command_cooldown: '&c&l[!] &7You are currently on cooldown for this command!'
+command_open_toopen: to open or close the faction
+command_open_foropen: for opening or closing the faction
+command_open_open: open
+command_open_closed: closed
+command_open_changes: '&c&l[!]&7 &c%1$s&7 changed the faction to &c%2$s&7.'
+command_open_changed: '&c&l[!]&7 The faction &c%1$s&7 is now &c%2$s&7.'
+command_open_description: Switch if invitation is required to join
+command_owner_disabled: '&c&l[!]&7 Sorry, but &cowned areas &7are &cdisabled &7on
+  this server.'
+command_owner_limit: '&c&l[!]&7 Sorry, but you have reached the server''s &climit&7
+  of &c%1$d&7 owned areas per faction.'
+command_owner_wrongfaction: '&c&l[!]&7 &7This land is &cnot claimed &7by your faction,
+  so you &ccan''t set&7 ownership of it.'
+command_owner_notclaimed: '&c&l[!]&7 This land&c is not &7claimed by a faction. Ownership
+  &cis not &7possible.'
+command_owner_notmember: '&c&l[!]&7 &c%1$s&7 is &cnot a member &7of this faction.'
+command_owner_cleared: '&c&l[!]&7 You have &ccleared &7ownership for this claimed
+  area.'
+command_owner_removed: '&c&l[!]&7 You have&c removed ownership &7of this &cclaimed
+  land&7 from &c%1$s&7.'
+command_owner_toset: to set ownership of claimed land
+command_owner_forset: for setting ownership of claimed land
+command_owner_added: '&c&l[!]&7 You have added &c%1$s&7 to the &cowner list&7 for
+  this claimed land.'
+command_owner_description: Set ownership of claimed land
+command_killholograms_description: Kill holograms in a radius, admin command
+command_ownerlist_disabled: '&c&l[!]&7 &cSorry, &7but owned areas are &cdisabled&7
+  on this server.'
+command_ownerlist_wrongfaction: '&c&l[!]&7 This land &cis not&7 claimed by your faction.'
+command_ownerlist_notclaimed: '&c&l[!]&7 This land is not claimed by any faction,
+  thus no owners.'
+command_ownerlist_none: '&c&l[!]&7 No owners are set here; everyone in the faction
+  has access.'
+command_ownerlist_owners: '&c&l[!]&7 Current owner(s) of this land: %1$s'
+command_ownerlist_description: List owner(s) of this claimed land
+paypalsee_player_paypal: '&c&l[!] &7You''re factions paypal is: &b%1$s&7.'
+command_paypal_notset: '&c&l[!] &7Your faction does not have their paypal set!'
+command_paypalset_admin_successful: '&c&l[!] &7You have set &b%1$s''s &7paypal to
+  &b%2$s&7.'
+command_paypalset_admin_failed: '&c&l[!] &b%1$s &7is not an email!'
+command_paypalset_notemail: '&c&l[!] &b%1$s &7is not an email!'
+command_paypalset_description: '&c&l[!] &7Set the email of your faction to claim rewards.'
+command_paypalsee_description: '&c&l[!] &7View a specific factions paypal email with
+  &b/f <seepaypal/getpaypal> <faction>&b.'
+command_paypalset_created: '&c&l[!] &7Make sure to type &b/f <paypal/setpaypal> <email>&7!'
+command_paypalset_successful: '&c&l[!] &7Successfully set your factions email - &b%1$s&7.'
+command_paypalsee_faction_paypal: '&c&l[!] &b%1$s''s &7faction has their paypal set
+  to &b%2$s&7.'
+command_paypalsee_faction_notset: '&c&l[!] &b%1$s''s &7paypal has not yet been set!'
+command_paypalsee_faction_nofaction: '&c&l[!] &b%1$s &7does not have a faction!'
+command_peaceful_description: '&c&l[!]&7Set a faction to peaceful'
+command_peaceful_yours: '&c&l[!]&7%1$s has %2$s your faction'
+command_peaceful_other: '&c&l[!]&7%s has %s the faction ''%s''.'
+command_peaceful_grant: '&c&l[!]&7 granted peaceful status to'
+command_peaceful_revoke: removed peaceful status from
+command_perm_description: '&c&l[!]&7&6Edit or list your Faction''s permissions.'
+command_perm_invalid_relation: '&c&l[!]&7Invalid relation defined. Try something like&c
+  ''ally'''
+command_perm_invalid_access: '&c&l[!]&7 Invalid access defined. Try something like
+  &c''allow'''
+command_perm_invalid_action: '&c&l[!]&7 Invalid action defined. Try something like
+  &c''build'''
+command_perm_set: '&c&l[!]&7 Set permission&c %1$s &7to &c%2$s &7for relation&c %3$s'
+command_perm_top: RCT MEM OFF ALLY TRUCE NEUT ENEMY
+command_perm_locked: '&cThis permission has been locked by the server'
+command_points_show_description: See the point balance of factions
+command_points_show_wilderness: '&c&l[!] &7You may not check the point balance of
+  wilderness!'
+command_points_show_own: '&c&l[!] &7Your faction has &e%1$s &7points.'
+command_points_show_other: '&c&l[!] &e{faction} &7has a point balance of &b{points}&7.'
+command_points_failure: '&c&l[!] &c{faction} does not exist.'
+command_points_successful: '&c&l[!] &7You have added &e%1$s &7points to &b%2$s&7.
+  &b%2$s''s &7New Point Balance: &e%3$s'
+command_points_insufficient: '&c&l[!] &7You may not add/set/remove a negative number
+  of points to a faction!'
+command_points_description: General Command For Faction Points
+command_addpoints_description: Add Points to Faction
+command_removepoints_successful: '&c&l[!] &7You have taken &e%1$s &7points from &b%2$s&7.
+  &b%2$s''s &7New Point Balance: &e%3$s'
+command_removepoints_description: Remove Points from a Faction
+command_setpoints_successful: '&c&l[!] &7You have set &e%1$s &7points to &b%2$s&7.
+  &b%2$s''s &7New Point Balance: &e%3$s'
+command_setpoints_description: Set Points of a Faction
+command_permanent_description: Toggles a permanent faction option
+command_permanent_grant: '&c&l[!]&7 added permanent status to'
+command_permanent_revoke: '&c&l[!]&7 removed permanent status from'
+command_permanent_yours: '&c&l[!]&7 &c%1$s&7 has &c%2$s&7 your faction'
+command_permanent_other: '&c&l[!]&7 &c%s &7has &c%s &7the faction ''&c%s&7''.'
+command_promote_target: '&c&l[!]&7 You''ve been &c%1$s&7 to &c%2$s&7.'
+command_promote_success: '&c&l[!]&7 You successfully &c%1$s %2$s &cto&7 %3$s&7.'
+command_promote_promoted: promoted
+command_promote_demoted: demoted
+command_promote_lowest_rank: '&c&l[!]&7 &c%1$s&7 already has the lowest rank in the
+  faction.'
+command_promote_highest_rank: '&c&l[!]&7 &c%1$s&7 already has the highest rank in
+  the faction.'
+command_promote_higher_rank: '&c&l[!]&7 &c%1$s&7 has a higher rank than yours. You
+  &4can not modify&7 his rank.'
+command_promote_coleader_admin: '&c&l[!]&7 &cColeaders cant promote players to Admin!'
+command_permanentpower_description: Toggle permanent faction power option
+command_permanentpower_grant: added permanentpower status to
+command_permanentpower_revoke: removed permanentpower status from
+command_permanentpower_success: '&c&l[!]&7 You&c %s &7%s.'
+command_permanentpower_faction: '&c&l[!]&7 &c%s %s &7your faction'
+command_promote_description: /f promote <name>
+command_promote_wrongfaction: '&c&l[!]&7 &c%1$s&7 is &cnot&7 part of your faction.'
+command_noaccess: '&c&l[!]&7 You don''t have access to that.'
+command_promote_not_allowed: '&c&l[!]&7 You cannot promote to the same rank as yourself!'
+command_promote_notself: '&c&l[!]&7 You cannot manage your own rank.'
+command_promote_not_same: '&c&l[!]&7 You cannot promote to the same rank as yourself!'
+command_power_toshow: to show player power info
+command_power_forshow: for showing player power info
+command_power_power: '&c&l[!]&7 &c%1$s » &cPower &7/ &cMaxpower&a » &c%2$d &7/ &c%3$d
+  %4$s'
+command_power_bonus: ' (bonus: '
+command_power_penalty: ' (penalty: '
+command_power_description: '&a&l» &7Show player &apower &7info'
+command_powerboost_help_1: '&c&l[!]&7 You must specify "plugin" or "player" to target
+  a player or "f" or "faction" to target a faction.'
+command_powerboost_help_2: '&c&l[!]&7 ex. /f powerboost plugin SomePlayer 0.5  -or-  /f
+  powerboost f SomeFaction -5'
+command_powerboost_invalidnum: You must specify a valid numeric value for the power bonus/penalty amount.
+command_powerboost_player: Player "%1$s"
+command_powerboost_faction: Faction "%1$s"
+command_powerboost_boost: '%1$s now has a power bonus/penalty of %2$d to min and max
+  power levels.'
+command_powerboost_boostlog: '%1$s has set the power bonus/penalty for %2$s to %3$d.'
+command_powerboost_description: Apply permanent power bonus/penalty to specified player or faction
+command_relations_allthenope: '&c&l[!]&7 &cNope!You can''t.'
+command_relations_morenope: '&c&l[!]&7 &cNope!&7You can''t declare a relation to &cyourself'
+command_relations_alreadyinrelationship: '&c&l[!]&7 You &calready&7 have that relation
+  wish set with&c %1$s.'
+command_relations_tomarry: to change a relation wish
+command_relations_formarry: for changing a relation wish
+command_relations_mutual: '&c&l[!]&7 Your faction is now %1$s&7 to &c%2$s&7.'
+command_relations_peaceful: '&c&l[!]&7 This will have no effect while your faction
+  is peaceful.'
+command_relations_peacefulother: '&c&l[!]&7 This will have &cno effect&7 while their
+  faction is peaceful.'
+command_relations_description: Set relation wish to another faction
+command_relations_exceeds_me: '&c&l[!]&7 Failed to set relation wish. You can only
+  have %1$s %2$s.'
+command_relations_exceeds_they: '&c&l[!]&7 Failed to set relation wish. They can only
+  have %1$s %2$s.'
+command_relations_proposal_1: '&c&l[!]&7 &c%1$s &7wishes to be your &c%2$s&7.'
+command_relations_proposal_2: '&c&l[!]&7 Type &c/%1$s %2$s %3$s&7 to accept.'
+command_relations_proposal_sent: '&c&l[!]&7 &c%1$s&7 were informed that you wish to
+  be &c%2$s&7.'
+command_reload_time: '&c&l[!]&7 Reloaded &call &7configuration files from disk, took
+  &c%1$d ms.'
+command_reload_description: Reload data file(s) from disk
+command_reserve_description: Reserve any faction name for any player
+command_reserve_success: '&a&l[!] &7You have reserved the faction &a%1$s &7for player
+  &a%2$s'
+command_reserve_alreadyreserved: '&c&l[!] &7The faction &b%1$s &7has already been
+  reserved!'
+command_safeunclaimall_description: Unclaim all safezone land
+command_safeunclaimall_unclaimed: '&c&l[!]&7 You unclaimed&c ALL&7 safe zone land.'
+command_safeunclaimall_unclaimedlog: '&c&l[!]&7 &c%1$s&7 unclaimed all safe zones.'
+command_saveall_success: '&c&l[!]&7 &cFactions saved to disk!'
+command_saveall_description: Save all data to disk
+command_scoreboard_description: Scoreboardy things
+command_setbanner_success: '&c&l[!] &7Banner Pattern Set!'
+command_setbanner_notbanner: '&c&l[!] &7The item is &cnot&7 a banner!'
+command_setbanner_description: set banner pattern for your faction
+command_setdefaultrole_description: /f defaultrole <role> - set your Faction's default role.
+command_setdefaultrole_notthatrole: '&c&l[!]&7 You cannot set the default to admin.'
+command_setdefaultrole_success: Set default role of your faction to %1$s
+command_setdefaultrole_invalidrole: Couldn't find matching role for %1$s
+command_setfwarp_notclaimed: '&c&l[!]&7 You can &conly&7 set warps in your faction
+  territory.'
+command_setfwarp_limit: '&c&l[!]&7 Your Faction already has the &cmax amount&7 of
+  warps set &c(%1$d).'
+command_setfwarp_set: '&c&l[!]&7 Set warp &c%1$s&7 and password &c''%2$s'' &7to your
+  location.'
+command_setfwarp_toset: to set warp
+command_setfwarp_forset: for setting warp
+command_setfwarp_description: Set a faction warp
+command_sethome_disabled: '&c&l[!]&7 &cSorry&7, Faction homes are disabled on this
+  server.'
+command_sethome_notclaimed: '&c&l[!]&c Sorry&7, your faction home can only be set
+  inside your &cown &7claimed territory.'
+command_sethome_toset: to set the faction home
+command_sethome_forset: for setting the faction home
+command_sethome_set: '&c&l[!]&c %1$s&7 set the home for your faction. You can now
+  use:'
+command_sethome_setother: '&c&l[!]&7 You have set the home for the &c%1$s&7 faction.'
+command_sethome_description: Set the faction home
+command_setpower_success: '&aSet power for &e%s &ato &b%d'
+command_setpower_description: set current playing power for player
+command_setmaxvaults_description: Set max vaults for a Faction.
+command_setmaxvaults_success: '&aSet max vaults for &e%s &ato &b%d'
+command_oncoooldown: '&c&l[!] &7You cannot use this command for another &b%1$s &7seconds.'
+command_spawner_lock_toggled: '&c&l[!] &7You have set placement of spawners to %1$s'
+command_spawner_lock_description: enable/disable placement of spawners
+command_spawner_lock_cannot_place: '&c&l[!] &7Placement of spawners has been temporarily
+  disabled!'
+command_strikes_changed: '&c&l[!] &7You have set &c%1$s''s &7strikes to &c%2$s'
+command_strikes_info: '&c&l[!] &7%1$s has %2$s strikes'
+command_strikes_target_invalid: '&c&l[!] &7The faction %1$s is invalid.'
+command_strikes_struck: '&c&l[!] &7Your faction strikes have changed by &c%1$s &7strike(s)!
+  Your faction now has &c%2$s/%3$s'
+command_strikes_description: Set strikes on factions to warn them
+command_strikesgive_description: Give a faction 1 strike
+command_striketake_description: Take a strike from a faction
+command_strikeset_description: Set a faction's strikes explicitly.
+command_strikesinfo_description: Get a faction's strikes
+shop_not_enough_points: '&c&l[!] &7Your faction does not have enough points to purchase
+  this!'
+shop_error_during_purchase: '&c&l[!] &7There was an error while trying to give items
+  please check your inventory! Purchase was not completed!'
+shop_bought_broadcast_faction: |2
+
+  &c&l[!] &e&lFactionShop » &b{player} &7bought &b{item}&7 for &b{cost} &7points!
+command_viewchest_description: view a factions chest/pv
+command_vault_description: Open your placed faction vault!
+command_vault_invalid: '&c&l[!]&7 Your vault was either&c claimed&7, &cbroken&7, or
+  has&c not been&7 placed yet.'
+command_vault_opening: '&c&l[!]&7 Opening faction vault.'
+command_vault_no_hopper: '&c&l[!] &7You cannot place a hopper near a vault!'
+command_getvault_alreadyset: '&c&l[!]&7 Vault has already been set!'
+command_getvault_alreadyhave: '&c&l[!]&7 You already have a vault in your inventory!'
+command_getvault_chestnear: '&c&l[!]&7 &7There is a chest or hopper &cnearby'
+command_getvault_success: '&cSucessfully set vault.'
+command_getvault_invalidlocation: '&cVault can only be placed in faction land!'
+command_getvault_description: Get the faction vault item!
+command_getvault_receive: '&cYou have recieved a faction vault!'
+command_getvault_nomoney: '&cYou do not have enough money'
+command_getvault_moneytake: '&c{amount} has been taken from your account'
+command_logout_kick_message: '&2You have safely logged out!'
+command_logout_active: '&c&l[!] &7You are already logging out!'
+command_logout_logging: '&c&l[!] &7You are logging out. Please wait &b%1$s &7seconds.'
+command_logout_description: logout safely from the server
+command_logout_moved: '&c&l[!] &7Your logout was cancelled because you moved!'
+command_logout_damage_taken: '&c&l[!] &7Your logout was cancelled because you were
+  damaged!'
+command_logout_teleported: '&c&l[!] &7Your logout was cancelled because you teleported!'
+command_notifications_toggled_on: '&c&l[!] &7You will &anow see &7claimed land notifications!'
+command_notifications_toggled_off: '&c&l[!] &7You will &cno longer see &7claimed land
+  notifications!'
+command_notifications_description: Toggle notifications for land claiming
+command_show_nofaction_self: You are not in a faction
+command_show_nofaction_other: That's not a faction
+command_show_toshow: to show faction information
+command_show_forshow: for showing faction information
+command_show_description: 'Description: %1$s'
+command_show_peaceful: This faction is Peaceful
+command_show_permanent: This faction is permanent, remaining even with no members.
+command_show_joining: 'Joining: %1$s '
+command_show_invitation: invitation is required
+command_show_uninvited: no invitation is needed
+command_show_nohome: n/a
+command_show_power: 'Land / Power / Maxpower:  %1$d/%2$d/%3$d %4$s.'
+command_show_bonus: ' (bonus: '
+command_show_penalty: ' (penalty: '
+command_show_depreciated: (%1$s depreciated)
+command_show_landvalue: 'Total land value: %1$s %2$s'
+command_show_bankcontains: 'Bank contains: %1$s'
+command_show_allies: 'Allies: '
+command_show_enemies: 'Enemies: '
+command_show_membersonline: 'Members online: '
+command_show_membersoffline: 'Members offline: '
+command_show_commanddescription: Show faction information
+command_show_deaths_til_raidable: 'DTR: %1$d'
+command_show_exempt: This faction is exempt and cannot be seen.
+command_show_needfaction: '&cYou need to join a faction to view your own!'
+command_showclaims_header: '&8&m-------------&8<{faction}''s claims&8>&8&m-------------'
+command_showclaims_format: '&8[{world}]:'
+command_showclaims_chunksformat: '&8(&c{x}&8,&c{z}&8)'
+command_showclaims_description: show your factions claims!
+command_showinvites_pending: 'Players with pending invites: '
+command_showinvites_clicktorevoke: Click to revoke invite for %1$s
+command_showinvites_description: Show pending faction invites
+command_alts_list_format: '%1$s Power: %2$s Last Seen: %3$s'
+command_alts_deinvite_description: Base command for revoking alt invitations
+command_seechunk_description: Show chunk boundaries
+command_seechunk_toggle: '&eSeechunk &d%1$s'
+command_status_format: '%1$s Power: %2$s Last Seen: %3$s'
+command_status_online: Online
+command_status_agosuffix: ' ago.'
+command_status_description: Show the status of a player
+command_stealth_description: Enable and Disable Stealth Mode
+command_stealth_enable: '&cStealth &7» &7You will no longer disable nearby players
+  in /f fly.'
+command_stealth_disable: '&cStealth &8» &7You will now disable other nearby players
+  in /f fly.'
+command_stealth_mustbemember: '&cStealth &8» &4You must be in a faction to use this
+  command'
+command_stuck_timeformat: m 'minutes', s 'seconds.'
+command_stuck_cancelled: Teleport cancelled because you were damaged
+command_stuck_outside: Teleport cancelled because you left %1$d block radius
+command_stuck_exists: You are already teleporting, you must wait %1$s
+command_stuck_start: 'Teleport will commence in %s. Don''t take or deal damage. '
+command_stuck_teleport: Teleported safely to %1$d, %2$d, %3$d.
+command_stuck_tostuck: to safely teleport %1$s out
+command_stuck_forstuck: for %1$s initiating a safe teleport out
+command_stuck_description: Safely teleports you out of enemy faction
+command_seechunk_enabled: '&cSeechunk enabled!'
+command_seechunk_disabled: '&cSeechunk disabled!'
+command_tag_taken: That tag is already taken
+command_tag_tochange: to change the faction tag
+command_tag_forchange: for changing the faction tag
+command_tag_faction: '%1$s changed your faction tag to %2$s'
+command_tag_changed: The faction %1$s changed their name to %2$s.
+command_tag_description: Change the faction tag
+command_title_tochange: to change a players title
+command_title_forchange: for changing a players title
+command_title_changed: '%1$s changed a title: %2$s'
+command_title_description: Set or remove a players title
+command_titletoggle_toggled: You have changed your title setting to &c%1$s
+command_titletoggle_description: Toggle titles to be served to you
+command_togglealliancechat_description: Toggles whether or not you will see alliance chat
+command_togglealliancechat_ignore: Alliance chat is now ignored
+command_togglealliancechat_unignore: Alliance chat is no longer ignored
+command_togglesb_disabled: You can't toggle scoreboards while they are disabled.
+command_top_description: Sort Factions to see the top of some criteria.
+command_top_top: Top Factions by %s. Page %d/%d
+command_top_line: '%d. &6%s: &c%s'
+command_top_invalid: Could not sort by %s. Try balance, online, members, power or land.
+command_tnt_disabled_msg: '&cThis command is disabled!'
+command_tnt_invalid_num: The amount needs to be a number!
+command_tnt_widthdraw_notenough_tnt: '&cNot enough tnt in bank.'
+command_tntfill_nodispensers: '&c&l[!] &7No dispensers were found in a radius of {radius}
+  blocks.'
+command_tnt_deposit_success: '&cSuccessfully deposited tnt.'
+command_tnt_exceedlimit: '&cThis exceeds the bank limit!'
+command_tnt_widthdraw_success: '&cSuccessfully withdrew tnt.'
+command_tnt_widthdraw_notenough: '&cNot enough tnt in bank.'
+command_tnt_deposit_notenough: '&cNot enough tnt in tnt inventory.'
+command_tnt_amount: '&cYour faction has {amount}/{maxAmount} tnt in the tnt bank.'
+command_tnt_positive: '&cPlease use positive numbers!'
+command_tnt_description: add/widthraw from faction's tnt bank
+command_tnt_widthdraw_notenough_space: '&cNot enough space in your inventory.'
+command_tnt_add_description: '&b/f tnt add&3 <amount>'
+command_tnt_take_description: '&b/f tnt take&3 <amount>'
+command_tntfill_header: '&c&l[!] &7Filling tnt in dispensers...'
+command_tntfill_success: '&c&l[!] &7Filled &c{amount}&7 Tnt in &c{dispensers} &7dispensers'
+command_tntfill_notenough: '&c&l[!] &7Not enough tnt in inventory.'
+command_tntfill_radiusmax: '&c&l[!] &7The max radius is {max}'
+command_tntfill_amountmax: '&c&l[!] &7The max amount is {max}'
+command_tntfill_mod: '&c&l[!] &7Tnt will be used from the faction bank because you
+  dont have the specified amount in your inventory and you are a {role}'
+command_tntfill_description: Fill tnt into dispensers around you
+command_unban_description: Unban someone from your Faction
+command_unban_notbanned: '&7%s &cisn''t banned. Not doing anything.'
+command_unban_target_in_other_faction: '&c%1$s is not in your faction!'
+command_unban_unbanned: '&e%1$s &cunbanned &7%2$s'
+command_unban_targetunbanned: '&aYou were unbanned from &r%s'
+command_unclaim_safezone_success: Safe zone was unclaimed.
+command_unclaim_safezone_noperm: This is a safe zone. You lack permissions to unclaim.
+command_unclaim_warzone_success: War zone was unclaimed.
+command_unclaim_warzone_noperm: This is a war zone. You lack permissions to unclaim.
+command_unclaim_unclaimed: '%1$s unclaimed some of your land.'
+command_unclaim_unclaims: You unclaimed this land.
+command_unclaim_log: '%1$s unclaimed land at (%2$s) from the faction: %3$s'
+command_unclaim_wrongfaction: You don't own this land.
+command_unclaim_tounclaim: to unclaim this land
+command_unclaim_forunclaim: for unclaiming this land
+command_unclaim_factionunclaimed: '%1$s unclaimed some land.'
+command_unclaim_description: Unclaim the land where you are standing
+command_unclaimall_tounclaim: to unclaim all faction land
+command_unclaimall_forunclaim: for unclaiming all faction land
+command_unclaimall_unclaimed: '%1$s unclaimed ALL of your faction''s land.'
+command_unclaimall_log: '%1$s unclaimed everything for the faction: %2$s'
+command_unclaimall_description: Unclaim all of your factions land
+command_unclaim_clicktounclaim: Click to unclaim &2(%1$d, %2$d)
+command_version_name: '&c&l[!]&7 &c&k||| &r&4SaberFactions&7 &c&k|||&r &c» &7By Driftay'
+command_version_version: '&7Version &c» &7%1$s'
+command_version_description: Show plugin and translation version information
+command_warunclaimall_description: Unclaim all warzone land
+command_warunclaimall_success: You unclaimed ALL war zone land.
+command_warunclaimall_log: '%1$s unclaimed all war zones.'
+command_drain_description: The ability to obtain all the money in faction members balances.
+command_drain_no_players: '&c&l[!] &cYou cannot drain a faction with no other members!'
+command_drain_recieved_amount: '&c&l[!] &fYou have drained all of your faction members
+  for &b%1$s.'
+command_drain_invalid_amount: '&c&l[!] &fYou cannot drain a faction with no worth.'
+command_wild_description: Teleport to a random location
+command_wild_wait: '&c&l[!] &7Teleporting in %1$s'
+command_wild_success: '&c&l[!] &7Teleporting...'
+command_wild_interupted: '&c&l[!] &7Teleport cancelled!'
+command_wild_failed: '&c&l[!] &7Could not find a location to teleport you to!'
+command_wild_inprogress: '&c&l[!] &7You are already teleporting somewhere!'
+command_rules_disabled_msg: '&cThis command is disabled!'
+command_rules_description: set/remove/add rules!
+command_rules_add_invalidargs: Please include a rule!
+command_rules_set_invalidargs: Please include a line number & rule!
+command_rules_remove_invalidargs: Please include a line number!
+command_rules_add_success: '&cRule added successfully!'
+command_rules_remove_success: '&cRule removed successfully!'
+command_rules_set_success: '&cRule set successfully!'
+command_rules_clear_success: '&cRule cleared successfully!'
+command_f_global_toggle: '&c&l[!] &7You have &b%1$s &7Global Chat'
+command_f_global_description: Toggle global chat and only allow factions based chats
+leave_passadmin: '&c&l[!] &7You must give the admin role to someone else first.'
+leave_negativepower: '&c&l[!] &7You cannot leave until your power is positive.'
+leave_toleave: to leave your faction.
+leave_forleave: for leaving your faction.
+leave_left: '&c&l[!] &c%s&7 left faction &c%s&7.'
+leave_disbanded: '&c&l[!] &c%s&7 was disbanded.'
+leave_disbandedlog: The faction %s (%s) was disbanded due to the last player (%s) leaving.
+leave_description: \n  &a&l» &7Leave your faction
+autoleave_admin_promoted: '&e&l[!] &7Faction admin &c%s&7 has been removed. &c%s&7
+  has been promoted as the new faction admin.'
+claim_protected: This land is protected
+claim_disabled: Sorry, this world has land claiming disabled.
+claim_cantclaim: You can't claim land for %s.
+claim_alreadyown: '%s already own this land.'
+claim_mustbe: You must be %s to claim land.
+claim_members: Factions must have at least %s members to claim land.
+claim_safezone: You can not claim a Safe Zone.
+claim_warzone: You can not claim a War Zone.
+claim_power: You can't claim more land! You need more power!
+claim_limit: Limit reached. You can't claim more land!
+claim_ally: You can't claim the land of your allies.
+claim_contigious: You can only claim additional land which is connected to your first claim or controlled by another faction!
+claim_factioncontiguous: You can only claim additional land which is connected to your first claim!
+claim_peaceful: '%s owns this land. Your faction is peaceful, so you cannot claim
+  land from other factions.'
+claim_peacefultarget: '%s owns this land, and is a peaceful faction. You cannot claim
+  land from them.'
+claim_thisissparta: '%s owns this land and is strong enough to keep it.'
+claim_border: You must start claiming land at the border of the territory.
+claim_toclaim: to claim this land
+claim_forclaim: for claiming this land
+claim_tooverclaim: to overclaim this land
+claim_foroverclaim: for over claiming this land
+claim_radius_claim: '%1$s &eclaimed %2$s chunks &astarting from &e(X: %3$s, Z: %4$s)'
+claim_claimed: '%s claimed land for %s from %s.'
+claim_claimedlog: '%s claimed land at (%s) for the faction: %s'
+claim_overclaim_disabled: Over claiming is disabled on this server.
+claim_tooclosetootherfaction: Your claim is too close to another Faction. Buffer required is %d
+claim_outsideworldborder: Your claim is outside the border.
+claim_outsideborderbuffer: Your claim is outside the border. %d chunks away world edge required.
+claim_click_to_claim: Click to try to claim &2(%1$d, %2$d)
+claim_map_outsideborder: '&cThis claim is outside the worldborder!'
+claim_youarehere: You are here
+claim_no_territory_perm: You do not have permission from your faction leader to do this!
+generic_you: you
+generic_yourfaction: your faction
+generic_nopermission: You don't have permission to %1$s.
+generic_action_nopermission: You don't have permission to use %1$s
+generic_fperm_nopermission: '&7The faction leader does not allow you to &c%1$s.'
+generic_dothat: do that
+generic_noplayermatch: No player match found for "<plugin>%1$s".
+generic_noplayerfound: No player "<plugin>%1$s" could not be found.
+generic_args_toofew: 'Too few arguments. Use like this:'
+generic_args_toomany: 'Strange argument "<plugin>%1$s". Use the command like this:'
+generic_defaultdescription: Default faction description :(
+generic_owners: 'Owner(s): %1$s'
+generic_publicland: Public faction land.
+generic_factionless: factionless
+generic_serveradmin: A server admin
+generic_server: Server
+generic_disabled: '&c&l[!] &7The feature &b%1$s &7is currently disabled.'
+generic_enabled: enabled
+generic_infinity: âˆž
+generic_nullplayer: null player
+generic_consoleonly: This command cannot be run as a player.
+generic_playeronly: This command can only be used by ingame players.
+generic_askyourleader: ' Ask your leader to:'
+generic_youshould: 'You should:'
+generic_youmaywant: 'You may want to: '
+generic_translation_version: 'Translation: %1$s(%2$s,%3$s) State: %4$s'
+generic_translation_contributors: 'Translation contributors: %1$s'
+generic_translation_responsible: 'Responsible for translation: %1$s'
+generic_factiontag_blacklist: '&cThat faction tag is blacklisted.'
+generic_factiontag_tooshort: The faction tag can't be shorter than %1$s chars.
+generic_factiontag_toolong: The faction tag can't be longer than %s chars.
+generic_factiontag_alphanumeric: Faction tag must be alphanumeric. "%s" is not allowed.
+generic_placeholder: <This is a placeholder for a message you should not see>
+generic_notenoughmoney: '&cYou dont have enough money!'
+generic_moneytake: '&c{amount} has been taken from your account.'
+generic_fperm_owner_nopermission: '&7This land is ownerclaimed, you need to be an
+  owner to %1$s it.'
+generic_nofaction_found: '&cCouldn''t find a faction with that name!'
+generic_youmustbe: '&cYour must be atleast %1$s to do this!'
+generic_memberonly: '&cYou must be in a faction to do this!'
+generic_worldguard: '&cThis area is worldguard protected.'
+grace_disabled_placeholder: Disabled
+mission_mission_started: '&f%1$s &dstarted the %2$s &fmission'
+mission_alread_completed: '&c&l[!] &7You may not restart a mission you have already
+  completed'
+mission_mission_active: '&c&l[!] &7This mission is currently active!'
+mission_mission_max_allowed: '&c&l[!] &7You may not have more than &b%1$s &7missions
+  active at once.'
+mission_mission_all_completed: '&c&l[!] &7Your faction has completed all available
+  missions.'
+mission_mission_finished: '&c&l[!] &7Your faction has successfully completed %1$s
+  mission!'
+command_mission_description: Opens missions gui
+mission_mission_cancelled: '&c&l[!] &7You have cancelled your factions current mission!'
+player_not_found: '&c&l[!] &b%1$s &7is either not online or not in your faction!'
+placeholder_role_name: None
+placeholder_custom_faction: '{faction} '
+warbanner_nofaction: '&cYou need a faction to use a warbanner!'
+warbanner_cooldown: '&cThe warbanner is on cooldown for your faction!'
+warbanner_invalidloc: '&cYou can only use warbanners in enemy land or the warzone'
+compass_short_north: N
+compass_short_east: E
+compass_short_south: S
+compass_short_west: W
+chat_mod: mod chat
+chat_faction: faction chat
+chat_alliance: alliance chat
+chat_truce: truce chat
+chat_public: public chat
+econ_off: no %s
+econ_format: '###,###.###'
+econ_moneytrasferredfrom: '%1$s was transferred from %2$s to %3$s.'
+econ_persongavemoneyto: '%1$s gave %2$s to %3$s.'
+econ_persontookmoneyfrom: '%1$s took %2$s from %3$s.'
+econ_disabled: Factions econ is disabled.
+econ_over_bal_cap: '&4The amount &e%s &4is over Essentials'' balance cap.'
+econ_moneylost: '&c&l[!] %s &7lost &c%s &7%s.'
+econ_cantafford: '&c%s &7can''t afford &c%s&7 %s.'
+econ_unabletotransfer: '&7Unable to transfer &c%s&7 to &c%s&7 from &c%s&7.'
+econ_playerbalance: '&c%s&7''s balance is &c%s&7.'
+econ_depositfailed: '&c%s&7 would have gained &c%s&7 %s, but the deposit failed.'
+econ_cantcontrolmoney: '&c%s&7 lacks permission to control &c%s&7''s money.'
+econ_moneytrasferredfrompersontoperson: '%1$s transferred %2$s from %3$s to %4$s.'
+relation_member_singular: member
+relation_member_plural: members
+relation_ally_singular: ally
+relation_ally_plural: allies
+relation_truce_singular: truce
+relation_truce_plural: truces
+relation_neutral_singular: neutral
+relation_neutral_plural: neutrals
+relation_enemy_singular: enemy
+relation_enemy_plural: enemies
+role_leader: leader
+role_coleader: coleader
+role_moderator: moderator
+role_normal: normal member
+role_recruit: recruit
+region_safezone: safezone
+region_warzone: warzone
+region_wilderness: wilderness
+region_peaceful: peaceful territory
+player_canthurt: You may not harm other players in %s
+player_safeauto: This land is now a safe zone.
+player_warauto: This land is now a war zone.
+player_ouch: Ouch, that is starting to hurt. You should give it a rest.
+player_use_wilderness: You can't use %s in the wilderness.
+player_use_safezone: You can't use %s in a safe zone.
+player_use_warzone: You can't use %s in a war zone.
+player_use_territory: You can't %s in the territory of %s.
+player_use_owned: 'You can''t use %s in this territory, it is owned by: %s.'
+player_command_warzone: You can't use the command '%s' in warzone.
+player_command_neutral: You can't use the command '%s' in neutral territory.
+player_command_enemy: You can't use the command '%s' in enemy territory.
+player_command_permanent: You can't use the command '%s' because you are in a permanent faction.
+player_command_ally: You can't use the command '%s' in ally territory.
+player_command_wilderness: You can't use the command '%s' in the wilderness.
+player_power_noloss_peaceful: You didn't lose any power since you are in a peaceful faction.
+player_power_noloss_world: You didn't lose any power due to the world you died in.
+player_power_noloss_wilderness: You didn't lose any power since you were in the wilderness.
+player_power_noloss_warzone: You didn't lose any power since you were in a war zone.
+player_power_loss_warzone: |-
+  The world you are in has power loss normally disabled, but you still lost power since you were in a war zone.
+  Your power is now %d / %d
+player_power_now: Your power is now %d / %d
+player_pvp_login: You can't hurt other players for %d seconds after logging in.
+player_pvp_requirefaction: You can't hurt other players until you join a faction.
+player_pvp_factionless: You can't hurt players who are not currently in a faction.
+player_pvp_peaceful: Peaceful players cannot participate in combat.
+player_pvp_neutral: You can't hurt neutral factions. Declare them as an enemy.
+player_pvp_canthurt: You can't hurt %s.
+player_pvp_neutralfail: You can't hurt %s in their own territory unless you declare them as an enemy.
+player_pvp_tried: '%s tried to hurt you.'
+shield_currently_enable: '&a&lCurrently Protected'
+shield_not_set: '&c&lNot Set'
+shield_currently_not_enabled: '&c&lCurrently Unprotected'
+nopages: Sorry. No Pages available.
+invalidpage: Invalid page. Must be between 1 and %1$d
+title: '&bFactions &0|&r'
+wilderness: '&2Wilderness'
+wilderness-description: ''
+warzone: '&4Warzone'
+warzone-description: Not the safest place to be.
+safezone: '&6Safezone'
+safezone-description: Free from pvp and monsters.
+toggle-sb: You now have scoreboards set to {value}
+faction-leave: Leaving %1$s&r, Entering %2$s&r
+faction-announcement-top: '&d--Unread Faction Announcements--'
+faction-announcement-bottom: '&d--Unread Faction Announcements--'
+default-prefix: '{relationcolor}[{faction}]'
+faction-login: '&e%1$s &9logged in.'
+faction-logout: '&e%1$s &9logged out..'
+nofactions-prefix: '&6[&ano-faction&6]&r'
+date-format: MM/d/yy h:ma
+raidable-true: 'true'
+raidable-false: 'false'
+warmups_notify_flight: '&eFlight will enable in &d%2$d &eseconds.'
+warmups_notify_teleport: '&eYou will teleport to &d%1$s &ein &d%2$d &eseconds.'
+warmups_already: '&cYou are already warming up.'
+warmups_cancelled: '&cYou have cancelled your warmup.'
+placeholderapi_null: ''
+
+
+
+
+
