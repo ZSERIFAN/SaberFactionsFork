@@ -24,6 +24,7 @@ import com.massivecraft.factions.zcore.util.TL;
 import mkremins.fanciful.FancyMessage;
 import net.dv8tion.jda.core.exceptions.HierarchyException;
 import net.milkbowl.vault.economy.Economy;
+import org.apache.commons.lang.time.StopWatch;
 import org.bukkit.*;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
@@ -32,6 +33,9 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 /**
@@ -1243,6 +1247,9 @@ public abstract class MemoryFPlayer implements FPlayer {
             if (!Econ.hasAtLeast(payee, cost, TL.CLAIM_TOCLAIM.toString()))
                 return false;
         }
+
+        if (this.getPower() < Conf.econCostPower)
+            return false;
 
         if (forFaction.getClaimOwnership().containsKey(flocation) && !forFaction.isPlayerInOwnerList(this, flocation)) {
             this.msg(TL.GENERIC_FPERM_OWNER_NOPERMISSION, "claim");

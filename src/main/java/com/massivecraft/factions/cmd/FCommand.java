@@ -146,14 +146,7 @@ public abstract class FCommand {
     }
 
     public String replaceFPlayerTags(String s, FPlayer player) {
-        ArrayList<String> keys = new ArrayList<String>() {
-            {
-                add("{balance}");
-                add("{lastSeen}");
-                add("{power}");
-                add("{group}");
-            }
-        };
+        List<String> keys = Arrays.asList("{balance}", "{lastSeen}", "{power}", "{group}");
         for (String str : keys)
             if (s.contains(str))
                 switch (str) {
@@ -175,17 +168,7 @@ public abstract class FCommand {
     }
 
     public String replaceFactionTags(String s, Faction faction) {
-        ArrayList<String> keys = new ArrayList<String>() {
-            {
-                add("{power}");
-                add("{maxPower}");
-                add("{leader}");
-                add("{group}");
-                add("{chunks}");
-                add("{members}");
-                add("{online}");
-            }
-        };
+        List<String> keys = Arrays.asList("{power}", "{maxPower}", "{leader}", "{group}", "{chunks}", "{members}", "{online}");
         for (String str : keys)
             if (s.contains(str))
                 switch (str) {

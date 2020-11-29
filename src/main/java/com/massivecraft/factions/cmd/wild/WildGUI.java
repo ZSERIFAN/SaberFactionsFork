@@ -42,9 +42,9 @@ public class WildGUI implements FactionGUI {
         if (map.containsKey(slot)) {
             String zone = map.get(slot);
             if (fplayer.hasMoney(FactionsPlugin.getInstance().getConfig().getInt("Wild.Zones." + zone + ".Cost"))) {
-                WaitExecutor.taskMap.put(player, new WaitTask(FactionsPlugin.instance.getConfig().getInt("Wild.Wait"), TL.COMMAND_WILD_WAIT, player, CmdWild.instance));
+                WaitExecutor.taskMap.put(player, new WaitTask(FactionsPlugin.getInstance().getConfig().getInt("Wild.Wait"), TL.COMMAND_WILD_WAIT, player, CmdWild.instance));
                 CmdWild.teleportRange.put(player, zone);
-                fplayer.msg(TL.COMMAND_WILD_WAIT, FactionsPlugin.instance.getConfig().getInt("Wild.Wait") + " Seconds");
+                fplayer.msg(TL.COMMAND_WILD_WAIT, FactionsPlugin.getInstance().getConfig().getInt("Wild.Wait") + " Seconds");
                 player.closeInventory();
             }
         }
@@ -52,27 +52,27 @@ public class WildGUI implements FactionGUI {
 
     @Override
     public void build() {
-        inv = Bukkit.createInventory(this, FactionsPlugin.instance.getConfig().getInt("Wild.GUI.Size"), Util.color(FactionsPlugin.getInstance().getConfig().getString("Wild.GUI.Name")));
+        inv = Bukkit.createInventory(this, FactionsPlugin.getInstance().getConfig().getInt("Wild.GUI.Size"), Util.color(FactionsPlugin.getInstance().getConfig().getString("Wild.GUI.Name")));
         ItemStack fillItem = XMaterial.matchXMaterial(FactionsPlugin.getInstance().getConfig().getString("Wild.GUI.FillMaterial.Type")).get().parseItem();
         ItemMeta meta = fillItem.getItemMeta();
         if (meta == null) return;
-        meta.setDisplayName(CC.translate(FactionsPlugin.instance.getConfig().getString("Wild.GUI.FillMaterial.Name")));
-        meta.setLore(Util.colorList(FactionsPlugin.instance.getConfig().getStringList("Wild.GUI.FillMaterial.Lore")));
+        meta.setDisplayName(CC.translate(FactionsPlugin.getInstance().getConfig().getString("Wild.GUI.FillMaterial.Name")));
+        meta.setLore(Util.colorList(FactionsPlugin.getInstance().getConfig().getStringList("Wild.GUI.FillMaterial.Lore")));
         fillItem.setItemMeta(meta);
-        for (int fill = 0; fill < FactionsPlugin.instance.getConfig().getInt("Wild.GUI.Size"); ++fill)
+        for (int fill = 0; fill < FactionsPlugin.getInstance().getConfig().getInt("Wild.GUI.Size"); ++fill)
             inv.setItem(fill, fillItem);
-        for (String key : Objects.requireNonNull(FactionsPlugin.instance.getConfig().getConfigurationSection("Wild.Zones")).getKeys(false)) {
-            ItemStack zoneItem = XMaterial.matchXMaterial(Objects.requireNonNull(FactionsPlugin.instance.getConfig().getString("Wild.Zones." + key + ".Material"))).get().parseItem();
+        for (String key : Objects.requireNonNull(FactionsPlugin.getInstance().getConfig().getConfigurationSection("Wild.Zones")).getKeys(false)) {
+            ItemStack zoneItem = XMaterial.matchXMaterial(Objects.requireNonNull(FactionsPlugin.getInstance().getConfig().getString("Wild.Zones." + key + ".Material"))).get().parseItem();
             assert zoneItem != null;
             ItemMeta zoneMeta = zoneItem.getItemMeta();
             if (zoneMeta == null) return;
             List<String> lore = new ArrayList<>();
-            for (String s : FactionsPlugin.instance.getConfig().getStringList("Wild.Zones." + key + ".Lore"))
+            for (String s : FactionsPlugin.getInstance().getConfig().getStringList("Wild.Zones." + key + ".Lore"))
                 lore.add(Util.color(s));
             zoneMeta.setLore(lore);
-            zoneMeta.setDisplayName(Util.color(FactionsPlugin.instance.getConfig().getString("Wild.Zones." + key + ".Name")));
+            zoneMeta.setDisplayName(Util.color(FactionsPlugin.getInstance().getConfig().getString("Wild.Zones." + key + ".Name")));
             zoneItem.setItemMeta(zoneMeta);
-            int slot = FactionsPlugin.instance.getConfig().getInt("Wild.Zones." + key + ".Slot");
+            int slot = FactionsPlugin.getInstance().getConfig().getInt("Wild.Zones." + key + ".Slot");
             map.put(slot, key);
             inv.setItem(slot, zoneItem);
         }

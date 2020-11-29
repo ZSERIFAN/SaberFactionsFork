@@ -25,7 +25,7 @@ public class CmdSethome extends FCommand {
 
     @Override
     public void perform(CommandContext context) {
-        FactionsPlugin.getInstance().getServer().getScheduler().runTaskAsynchronously(FactionsPlugin.instance, () -> {
+        FactionsPlugin.getInstance().getServer().getScheduler().runTaskAsynchronously(FactionsPlugin.getInstance(), () -> {
             if (!Conf.homesEnabled) {
                 context.msg(TL.COMMAND_SETHOME_DISABLED);
                 return;

@@ -88,7 +88,7 @@ public class CmdUnclaim extends FCommand {
                 context.msg(TL.COMMAND_UNCLAIM_SAFEZONE_SUCCESS);
 
                 if (Conf.logLandUnclaims)
-                    FactionsPlugin.instance.log(TL.COMMAND_UNCLAIM_LOG.format(context.fPlayer.getName(), target.getCoordString(), targetFaction.getTag()));
+                    FactionsPlugin.getInstance().log(TL.COMMAND_UNCLAIM_LOG.format(context.fPlayer.getName(), target.getCoordString(), targetFaction.getTag()));
                 return true;
             } else {
                 context.msg(TL.COMMAND_UNCLAIM_SAFEZONE_NOPERM);
@@ -100,7 +100,7 @@ public class CmdUnclaim extends FCommand {
                 context.msg(TL.COMMAND_UNCLAIM_WARZONE_SUCCESS);
 
                 if (Conf.logLandUnclaims)
-                    FactionsPlugin.instance.log(TL.COMMAND_UNCLAIM_LOG.format(context.fPlayer.getName(), target.getCoordString(), targetFaction.getTag()));
+                    FactionsPlugin.getInstance().log(TL.COMMAND_UNCLAIM_LOG.format(context.fPlayer.getName(), target.getCoordString(), targetFaction.getTag()));
                 return true;
             } else {
                 context.msg(TL.COMMAND_UNCLAIM_WARZONE_NOPERM);
@@ -120,7 +120,7 @@ public class CmdUnclaim extends FCommand {
             context.msg(TL.COMMAND_UNCLAIM_UNCLAIMS);
 
             if (Conf.logLandUnclaims)
-                FactionsPlugin.instance.log(TL.COMMAND_UNCLAIM_LOG.format(context.fPlayer.getName(), target.getCoordString(), targetFaction.getTag()));
+                FactionsPlugin.getInstance().log(TL.COMMAND_UNCLAIM_LOG.format(context.fPlayer.getName(), target.getCoordString(), targetFaction.getTag()));
 
             return true;
         }

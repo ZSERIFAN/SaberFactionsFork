@@ -22,23 +22,18 @@ public class Version {
                 FactionsPlugin.instance.log("Minecraft com.massivecraft.factions.Version 1.13 found, New Items will be used.");
                 break;
             case 14:
-                FactionsPlugin.instance.log("Minecraft com.massivecraft.factions.Version 1.14 found.");
-                break;
             case 15:
-                FactionsPlugin.instance.log("Minecraft com.massivecraft.factions.Version 1.15 found.");
-                break;
             case 16:
-                FactionsPlugin.instance.log("Minecraft com.massivecraft.factions.Version 1.16 found.");
+                FactionsPlugin.instance.log("Minecraft com.massivecraft.factions.Version 1." + version + " found!");
                 break;
         }
     }
 
     public static void initParticleProvider() {
-        if (FactionsPlugin.instance.version <= 13) { // Before 1.13
+        if (FactionsPlugin.instance.version <= 13) // Before 1.13
             FactionsPlugin.instance.particleProvider = new PacketParticleProvider();
-        } else {
+         else
             FactionsPlugin.instance.particleProvider = new BukkitParticleProvider();
-        }
         Bukkit.getLogger().info(FactionsPlugin.instance.txt.parse("Using %1s as a particle provider", FactionsPlugin.instance.particleProvider.name()));
     }
 

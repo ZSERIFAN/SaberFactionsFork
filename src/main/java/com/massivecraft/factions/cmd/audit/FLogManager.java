@@ -57,7 +57,7 @@ public class FLogManager {
             e.printStackTrace();
         }
 
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(FactionsPlugin.instance, () -> {
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(FactionsPlugin.getInstance(), () -> {
             if (saving)
                 Bukkit.getLogger().info("Ignoring saveLogs scheduler due to saving == true!");
             else {

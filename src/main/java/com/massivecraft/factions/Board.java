@@ -30,7 +30,7 @@ public abstract class Board {
 
     public abstract Faction getFactionAt(FLocation flocation);
 
-    public abstract void setIdAt(String id, FLocation flocation);
+    public abstract boolean setIdAt(String id, FLocation flocation);
 
     public abstract void setFactionAt(Faction faction, FLocation flocation);
 
@@ -41,7 +41,7 @@ public abstract class Board {
     public abstract Set<FLocation> getAllClaims(Faction faction);
 
     // not to be confused with claims, ownership referring to further member-specific ownership of a claim
-    public abstract void clearOwnershipAt(FLocation flocation);
+    public abstract boolean clearOwnershipAt(FLocation flocation);
 
     public abstract void unclaimAll(String factionId);
 

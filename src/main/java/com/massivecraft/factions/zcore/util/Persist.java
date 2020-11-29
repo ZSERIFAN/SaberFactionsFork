@@ -2,6 +2,7 @@ package com.massivecraft.factions.zcore.util;
 
 import com.massivecraft.factions.zcore.MPlugin;
 
+import javax.swing.plaf.metal.MetalComboBoxUI;
 import java.io.File;
 import java.lang.reflect.Type;
 import java.util.logging.Level;
@@ -57,15 +58,7 @@ public class Persist {
         T loaded = this.load(clazz, file);
 
         if (loaded == null) {
-            p.log(Level.WARNING, "Using default as I failed to load: " + file);
-
-            // backup bad file, so user can attempt to recover their changes from it
-            File backup = new File(file.getPath() + "_bad");
-            if (backup.exists())
-                backup.delete();
-            p.log(Level.WARNING, "Backing up copy of bad file to: " + backup);
-            file.renameTo(backup);
-
+            p.log(Level.WARNING, "Couldn't load the persisten conf file.");
             return def;
         }
 

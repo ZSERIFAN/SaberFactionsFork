@@ -51,7 +51,7 @@ public class CmdUnclaimall extends FCommand {
             Board.getInstance().unclaimAll(target.getId());
             context.faction.msg(TL.COMMAND_UNCLAIMALL_LOG, context.fPlayer.describeTo(target, true), target.getTag());
             if (Conf.logLandUnclaims)
-                FactionsPlugin.instance.log(TL.COMMAND_UNCLAIMALL_LOG.format(context.fPlayer.getName(), context.faction.getTag()));
+                FactionsPlugin.getInstance().log(TL.COMMAND_UNCLAIMALL_LOG.format(context.fPlayer.getName(), context.faction.getTag()));
             return;
 
         }
@@ -73,7 +73,7 @@ public class CmdUnclaimall extends FCommand {
         Util.logFactionEvent(context.faction, FLogType.CHUNK_CLAIMS, context.fPlayer.getName(), CC.RedB + "UNCLAIMED", String.valueOf(unclaimed), new FLocation(context.fPlayer.getPlayer().getLocation()).formatXAndZ(","));
 
         if (Conf.logLandUnclaims)
-            FactionsPlugin.instance.log(TL.COMMAND_UNCLAIMALL_LOG.format(context.fPlayer.getName(), context.faction.getTag()));
+            FactionsPlugin.getInstance().log(TL.COMMAND_UNCLAIMALL_LOG.format(context.fPlayer.getName(), context.faction.getTag()));
     }
 
     @Override

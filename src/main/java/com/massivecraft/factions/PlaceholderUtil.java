@@ -13,21 +13,21 @@ public class PlaceholderUtil {
     public static void setupPlaceholderAPI() {
         Plugin clip = Bukkit.getServer().getPluginManager().getPlugin("PlaceholderAPI");
         if (clip != null && clip.isEnabled()) {
-            FactionsPlugin.instance.clipPlaceholderAPIManager = new ClipPlaceholderAPIManager();
-            if (FactionsPlugin.instance.clipPlaceholderAPIManager.register()) {
-                FactionsPlugin.instance.PlaceholderApi = true;
-                FactionsPlugin.instance.log(Level.INFO, "Successfully registered placeholders with PlaceholderAPI.");
+            FactionsPlugin.getInstance().clipPlaceholderAPIManager = new ClipPlaceholderAPIManager();
+            if (FactionsPlugin.getInstance().clipPlaceholderAPIManager.register()) {
+                FactionsPlugin.getInstance().PlaceholderApi = true;
+                FactionsPlugin.getInstance().log(Level.INFO, "Successfully registered placeholders with PlaceholderAPI.");
             } else {
-                FactionsPlugin.instance.PlaceholderApi = false;
+                FactionsPlugin.getInstance().PlaceholderApi = false;
             }
         } else {
-            FactionsPlugin.instance.PlaceholderApi = false;
+            FactionsPlugin.getInstance().PlaceholderApi = false;
         }
 
         Plugin mvdw = Bukkit.getServer().getPluginManager().getPlugin("MVdWPlaceholderAPI");
         if (mvdw != null && mvdw.isEnabled()) {
-            FactionsPlugin.instance.mvdwPlaceholderAPIManager = true;
-            FactionsPlugin.instance.log(Level.INFO, "Found MVdWPlaceholderAPI. Adding hooks.");
+            FactionsPlugin.getInstance().mvdwPlaceholderAPIManager = true;
+            FactionsPlugin.getInstance().log(Level.INFO, "Found MVdWPlaceholderAPI. Adding hooks.");
         }
     }
 
@@ -39,11 +39,11 @@ public class PlaceholderUtil {
     }
 
     public static boolean isClipPlaceholderAPIHooked() {
-        return FactionsPlugin.instance.clipPlaceholderAPIManager != null;
+        return FactionsPlugin.getInstance().clipPlaceholderAPIManager != null;
     }
 
     public static boolean isMVdWPlaceholderAPIHooked() {
-        return FactionsPlugin.instance.mvdwPlaceholderAPIManager;
+        return FactionsPlugin.getInstance().mvdwPlaceholderAPIManager;
     }
 
 }

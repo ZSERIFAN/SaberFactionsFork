@@ -1,5 +1,7 @@
 package com.massivecraft.factions;
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.massivecraft.factions.cmd.Aliases;
 import com.massivecraft.factions.cmd.CmdAutoHelp;
 import com.massivecraft.factions.cmd.FCmdRoot;
@@ -10,39 +12,51 @@ import com.massivecraft.factions.cmd.check.CheckTask;
 import com.massivecraft.factions.cmd.check.ShieldTask;
 import com.massivecraft.factions.cmd.check.WeeWooTask;
 import com.massivecraft.factions.cmd.chest.AntiChestListener;
+import com.massivecraft.factions.cmd.reserve.ReserveAdapter;
 import com.massivecraft.factions.cmd.reserve.ReserveObject;
 import com.massivecraft.factions.integration.Econ;
 import com.massivecraft.factions.listeners.*;
 import com.massivecraft.factions.missions.MissionHandler;
 import com.massivecraft.factions.util.FlightEnhance;
+import com.massivecraft.factions.util.LazyLocation;
 import com.massivecraft.factions.util.SeeChunkUtil;
+import com.massivecraft.factions.util.adapters.*;
 import com.massivecraft.factions.util.particle.ParticleProvider;
 import com.massivecraft.factions.util.timer.TimerManager;
 import com.massivecraft.factions.util.wait.WaitExecutor;
 import com.massivecraft.factions.zcore.MPlugin;
+import com.massivecraft.factions.zcore.fperms.Access;
+import com.massivecraft.factions.zcore.fperms.Permissable;
+import com.massivecraft.factions.zcore.fperms.PermissableAction;
 import com.massivecraft.factions.zcore.frame.fshield.FShieldListener;
 import com.massivecraft.factions.zcore.frame.fupgrades.UpgradesListener;
 import me.lucko.commodore.CommodoreProvider;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
 import java.io.*;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 
 public class Util {
 
     public static FLogManager getFlogManager() {
-        return FactionsPlugin.instance.fLogManager;
+        return FactionsPlugin.getInstance().fLogManager;
     }
 
     public static void logFactionEvent(Faction faction, FLogType type, String... arguments) {
-        FactionsPlugin.instance.fLogManager.log(faction, type, arguments);
+        FactionsPlugin.getInstance().fLogManager.log(faction, type, arguments);
     }
 
     public static String color(String line) {
@@ -56,10 +70,10 @@ public class Util {
     }
 
     public static List<ReserveObject> getFactionReserves() {
-        return FactionsPlugin.instance.reserveObjects;
+        return FactionsPlugin.getInstance().reserveObjects;
     }
     public static void debug(Level level, String s) {
-        if (FactionsPlugin.instance.getConfig().getBoolean("debug", false)) Bukkit.getLogger().log(level, s);
+        if (FactionsPlugin.getInstance().getConfig().getBoolean("debug", false)) Bukkit.getLogger().log(level, s);
     }
     public static void debug(String s) {
         debug(Level.INFO, s);
@@ -70,22 +84,22 @@ public class Util {
     }
 
     public static String getPrimaryGroup(OfflinePlayer player) {
-        return FactionsPlugin.instance.perms == null || !FactionsPlugin.instance.perms.hasGroupSupport() ? " " : FactionsPlugin.instance.perms.getPrimaryGroup(Bukkit.getWorlds().get(0).toString(), player);
+        return FactionsPlugin.getInstance().perms == null || !FactionsPlugin.getInstance().perms.hasGroupSupport() ? " " : FactionsPlugin.getInstance().perms.getPrimaryGroup(Bukkit.getWorlds().get(0).toString(), player);
     }
 
     public static FactionsPlayerListener getFactionsPlayerListener() {
-        return FactionsPlugin.instance.factionsPlayerListener;
+        return FactionsPlugin.getInstance().factionsPlayerListener;
     }
     public static ParticleProvider getParticleProvider() {
-        return FactionsPlugin.instance.particleProvider;
+        return FactionsPlugin.getInstance().particleProvider;
     }
 
     public static SeeChunkUtil getSeeChunkUtil() {
-        return FactionsPlugin.instance.seeChunkUtil;
+        return FactionsPlugin.getInstance().seeChunkUtil;
     }
 
     public static TimerManager getTimerManager() {
-        return FactionsPlugin.instance.timerManager;
+        return FactionsPlugin.getInstance().timerManager;
     }
 
     public static void checkVault() {
@@ -93,7 +107,7 @@ public class Util {
             System.out.println("You are missing dependencies!");
             System.out.println("Please verify [Vault] is installed!");
             Conf.save();
-            Bukkit.getPluginManager().disablePlugin(FactionsPlugin.instance);
+            Bukkit.getPluginManager().disablePlugin(FactionsPlugin.getInstance());
             return;
         }
     }
@@ -102,7 +116,7 @@ public class Util {
         for (FPlayer fPlayer : FPlayers.getInstance().getAllFPlayers()) {
             Faction faction = Factions.getInstance().getFactionById(fPlayer.getFactionId());
             if (faction == null) {
-                FactionsPlugin.instance.log("Invalid faction id on " + fPlayer.getName() + ":" + fPlayer.getFactionId());
+                FactionsPlugin.getInstance().log("Invalid faction id on " + fPlayer.getName() + ":" + fPlayer.getFactionId());
                 fPlayer.resetFactionData(false);
                 continue;
             }
@@ -114,8 +128,8 @@ public class Util {
     public static void registerChecks() {
         if (Conf.useCheckSystem) {
             int minute = 1200;
-            FactionsPlugin.instance.getServer().getScheduler().runTaskTimerAsynchronously(FactionsPlugin.instance, new CheckTask(FactionsPlugin.instance, 3), 0L, minute * 3);
-            FactionsPlugin.instance.getServer().getScheduler().runTaskTimerAsynchronously(FactionsPlugin.instance, new CheckTask(FactionsPlugin.instance, 5), 0L, minute * 5);
+            FactionsPlugin.getInstance().getServer().getScheduler().runTaskTimerAsynchronously(FactionsPlugin.getInstance(), new CheckTask(FactionsPlugin.getInstance(), 3), 0L, minute * 3);
+            FactionsPlugin.getInstance().getServer().getScheduler().runTaskTimerAsynchronously(FactionsPlugin.getInstance(), new CheckTask(FactionsPlugin.getInstance(), 5), 0L, minute * 5);
             FactionsPlugin.instance.getServer().getScheduler().runTaskTimerAsynchronously(FactionsPlugin.instance, new CheckTask(FactionsPlugin.instance, 10), 0L, minute * 10);
             FactionsPlugin.instance.getServer().getScheduler().runTaskTimerAsynchronously(FactionsPlugin.instance, new CheckTask(FactionsPlugin.instance, 15), 0L, minute * 15);
             FactionsPlugin.instance.getServer().getScheduler().runTaskTimerAsynchronously(FactionsPlugin.instance, new CheckTask(FactionsPlugin.instance, 30), 0L, minute * 30);

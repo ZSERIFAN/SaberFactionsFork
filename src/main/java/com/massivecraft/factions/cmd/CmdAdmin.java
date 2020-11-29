@@ -26,7 +26,7 @@ public class CmdAdmin extends FCommand {
 
     @Override
     public void perform(CommandContext context) {
-        FactionsPlugin.getInstance().getServer().getScheduler().runTaskAsynchronously(FactionsPlugin.instance, () -> {
+        FactionsPlugin.getInstance().getServer().getScheduler().runTaskAsynchronously(FactionsPlugin.getInstance(), () -> {
             if (context.player == null) {
                 context.msg(TL.GENERIC_PLAYERONLY);
                 return;
@@ -83,18 +83,18 @@ public class CmdAdmin extends FCommand {
             Util.getFlogManager().log(targetFaction, FLogType.RANK_EDIT, context.fPlayer.getName(), fyou.getName(), ChatColor.RED + "Admin");
 
             // Inform all players
-            if (FactionsPlugin.instance.getConfig().getBoolean("faction-leader-broadcast"))
+            if (FactionsPlugin.getInstance().getConfig().getBoolean("faction-leader-broadcast"))
                 for (FPlayer fplayer : FPlayers.getInstance().getOnlinePlayers())
                     fplayer.msg(TL.COMMAND_ADMIN_PROMOTED, context.player == null ? TL.GENERIC_SERVERADMIN.toString() : context.fPlayer.describeTo(fplayer, true), fyou.describeTo(fplayer), targetFaction.describeTo(fplayer));
         });
     }
 
     private void setRole(FPlayer fp, Role r) {
-        FactionsPlugin.getInstance().getServer().getScheduler().runTask(FactionsPlugin.instance, () -> fp.setRole(r));
+        FactionsPlugin.getInstance().getServer().getScheduler().runTask(FactionsPlugin.getInstance(), () -> fp.setRole(r));
     }
 
     private void promoteNewLeader(Faction f) {
-        FactionsPlugin.getInstance().getServer().getScheduler().runTask(FactionsPlugin.instance, (Runnable) f::promoteNewLeader);
+        FactionsPlugin.getInstance().getServer().getScheduler().runTask(FactionsPlugin.getInstance(), (Runnable) f::promoteNewLeader);
     }
 
     public TL getUsageTranslation() {

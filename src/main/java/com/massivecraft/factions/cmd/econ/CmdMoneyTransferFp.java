@@ -44,7 +44,7 @@ public class CmdMoneyTransferFp extends FCommand {
         boolean success = Econ.transferMoney(context.fPlayer, from, to, amount);
 
         if (success && Conf.logMoneyTransactions)
-            FactionsPlugin.instance.log(ChatColor.stripColor(FactionsPlugin.getInstance().txt.parse(TL.COMMAND_MONEYTRANSFERFP_TRANSFER.toString(), context.fPlayer.getName(), Econ.moneyString(amount), from.describeTo(null), to.describeTo(null))));
+            FactionsPlugin.getInstance().log(ChatColor.stripColor(FactionsPlugin.getInstance().txt.parse(TL.COMMAND_MONEYTRANSFERFP_TRANSFER.toString(), context.fPlayer.getName(), Econ.moneyString(amount), from.describeTo(null), to.describeTo(null))));
     }
 
     @Override

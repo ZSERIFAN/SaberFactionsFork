@@ -58,7 +58,7 @@ public class CmdTntFill extends FCommand {
 
     @Override
     public void perform(CommandContext context) {
-        if (!FactionsPlugin.instance.getConfig().getBoolean("Tntfill.enabled")) {
+        if (!FactionsPlugin.getInstance().getConfig().getBoolean("Tntfill.enabled")) {
             context.msg(TL.COMMAND_TNT_DISABLED_MSG);
             return;
         }

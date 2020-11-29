@@ -28,7 +28,7 @@ public class CmdDescription extends FCommand {
 
     @Override
     public void perform(CommandContext context) {
-        FactionsPlugin.getInstance().getServer().getScheduler().runTaskAsynchronously(FactionsPlugin.instance, () -> {
+        FactionsPlugin.getInstance().getServer().getScheduler().runTaskAsynchronously(FactionsPlugin.getInstance(), () -> {
             // if economy is enabled, they're not on the bypass list, and this command has a cost set, make 'em pay
             if (!context.payForCommand(Conf.econCostDesc, TL.COMMAND_DESCRIPTION_TOCHANGE, TL.COMMAND_DESCRIPTION_FORCHANGE))
                 return;
@@ -37,7 +37,7 @@ public class CmdDescription extends FCommand {
             // And replace all the % because it messes with string formatting and this is easy way around that.
             String desc = TextUtil.implode(context.args, " ").replaceAll("%", "").replaceAll("(&([a-f0-9klmnor]))", "& $2");
             context.faction.setDescription(desc);
-            Bukkit.getScheduler().scheduleSyncDelayedTask(FactionsPlugin.instance, () -> Util.logFactionEvent(context.faction, FLogType.FDESC_EDIT, context.fPlayer.getName(), desc));
+            Bukkit.getScheduler().scheduleSyncDelayedTask(FactionsPlugin.getInstance(), () -> Util.logFactionEvent(context.faction, FLogType.FDESC_EDIT, context.fPlayer.getName(), desc));
             if (!Conf.broadcastDescriptionChanges) {
                 context.msg(TL.COMMAND_DESCRIPTION_CHANGED, context.faction.describeTo(context.fPlayer));
                 context.sendMessage(context.faction.getDescription());

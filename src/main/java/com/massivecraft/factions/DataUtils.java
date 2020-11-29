@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class DataUtils {
 
     public static void initReserves() {
-        String path = Paths.get(FactionsPlugin.instance.getDataFolder().getAbsolutePath()).toAbsolutePath().toString() + File.separator + "data" + File.separator + "reserves.json";
+        String path = Paths.get(FactionsPlugin.getInstance().getDataFolder().getAbsolutePath()).toAbsolutePath().toString() + File.separator + "data" + File.separator + "reserves.json";
         File file = new File(path);
         try {
             String json;
@@ -33,8 +33,8 @@ public class DataUtils {
                 Files.write(Paths.get(path), "[]".getBytes());
                 json = "[]";
             }
-            FactionsPlugin.instance.reserveObjects = FactionsPlugin.instance.getGsonBuilder().create().fromJson(json, new ListParameterizedType(ReserveObject.class));
-            if (FactionsPlugin.instance.reserveObjects == null) FactionsPlugin.instance.reserveObjects = new ArrayList<>();
+            FactionsPlugin.getInstance().reserveObjects = FactionsPlugin.getInstance().getGsonBuilder().create().fromJson(json, new ListParameterizedType(ReserveObject.class));
+            if (FactionsPlugin.getInstance().reserveObjects == null) FactionsPlugin.getInstance().reserveObjects = new ArrayList<>();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,13 +42,13 @@ public class DataUtils {
 
     public static void saveReserves() {
         try {
-            String path = Paths.get(FactionsPlugin.instance.getDataFolder().getAbsolutePath()).toAbsolutePath().toString() + File.separator + "data" + File.separator + "reserves.json";
+            String path = Paths.get(FactionsPlugin.getInstance().getDataFolder().getAbsolutePath()).toAbsolutePath().toString() + File.separator + "data" + File.separator + "reserves.json";
             File file = new File(path);
             if (!file.exists()) {
                 file.getParentFile().mkdirs();
                 file.createNewFile();
             }
-            Files.write(Paths.get(file.getPath()), FactionsPlugin.instance.getGsonBuilder().create().toJson(FactionsPlugin.instance.reserveObjects).getBytes());
+            Files.write(Paths.get(file.getPath()), FactionsPlugin.getInstance().getGsonBuilder().create().toJson(FactionsPlugin.getInstance().reserveObjects).getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -57,11 +57,11 @@ public class DataUtils {
     public static boolean setupPermissions() {
         try {
             RegisteredServiceProvider<Permission> rsp = Bukkit.getServer().getServicesManager().getRegistration(Permission.class);
-            if (rsp != null) FactionsPlugin.instance.perms = rsp.getProvider();
+            if (rsp != null) FactionsPlugin.getInstance().perms = rsp.getProvider();
         } catch (NoClassDefFoundError ex) {
             return false;
         }
-        return FactionsPlugin.instance.perms != null;
+        return FactionsPlugin.getInstance().perms != null;
     }
 
     public static boolean setupPlayervaults() {

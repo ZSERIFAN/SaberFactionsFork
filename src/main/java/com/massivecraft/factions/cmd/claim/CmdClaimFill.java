@@ -86,6 +86,7 @@ public class CmdClaimFill extends FCommand {
                 context.msg(TL.COMMAND_CLAIMFILL_TOOFAR, distance);
                 return;
             }
+
             addIf(toClaim, queue, currentHead.getRelative(0, 1));
             addIf(toClaim, queue, currentHead.getRelative(0, -1));
             addIf(toClaim, queue, currentHead.getRelative(1, 0));

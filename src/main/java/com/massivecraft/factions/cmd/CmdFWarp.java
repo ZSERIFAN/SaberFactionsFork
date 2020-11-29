@@ -61,14 +61,14 @@ public class CmdFWarp extends FCommand {
                         player.teleport(fPlayer.getFaction().getWarp(warpName).getLocation());
                         fPlayer.msg(TL.COMMAND_FWARP_WARPED, warpName);
                     }
-                }, FactionsPlugin.instance.getConfig().getLong("warmups.f-warp", 10));
+                }, FactionsPlugin.getInstance().getConfig().getLong("warmups.f-warp", 10));
             } else
                 context.msg(TL.COMMAND_FWARP_INVALID_WARP, warpName);
         }
     }
 
     private boolean transact(FPlayer player, CommandContext context) {
-        return !FactionsPlugin.instance.getConfig().getBoolean("warp-cost.enabled", false) || player.isAdminBypassing() || context.payForCommand(FactionsPlugin.instance.getConfig().getDouble("warp-cost.warp", 5), TL.COMMAND_FWARP_TOWARP.toString(), TL.COMMAND_FWARP_FORWARPING.toString());
+        return !FactionsPlugin.getInstance().getConfig().getBoolean("warp-cost.enabled", false) || player.isAdminBypassing() || context.payForCommand(FactionsPlugin.getInstance().getConfig().getDouble("warp-cost.warp", 5), TL.COMMAND_FWARP_TOWARP.toString(), TL.COMMAND_FWARP_FORWARPING.toString());
     }
 
     @Override

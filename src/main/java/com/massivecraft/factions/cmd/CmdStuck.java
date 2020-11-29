@@ -55,15 +55,15 @@ public class CmdStuck extends FCommand {
 
                 @Override
                 public void run() {
-                    if (!FactionsPlugin.instance.getStuckMap().containsKey(player.getUniqueId()))
+                    if (!FactionsPlugin.getInstance().getStuckMap().containsKey(player.getUniqueId()))
                         return;
 
                     // check for world difference or radius exceeding
                     final World world = chunk.getWorld();
                     if (world.getUID() != player.getWorld().getUID() || sentAt.distance(player.getLocation()) > radius) {
                         context.msg(TL.COMMAND_STUCK_OUTSIDE.format(radius));
-                        FactionsPlugin.instance.getTimers().remove(player.getUniqueId());
-                        FactionsPlugin.instance.getStuckMap().remove(player.getUniqueId());
+                        FactionsPlugin.getInstance().getTimers().remove(player.getUniqueId());
+                        FactionsPlugin.getInstance().getStuckMap().remove(player.getUniqueId());
                         return;
                     }
 
@@ -74,15 +74,15 @@ public class CmdStuck extends FCommand {
                         public boolean work() {
                             FLocation chunk = currentFLocation();
                             Faction faction = board.getFactionAt(chunk);
-                            int buffer = FactionsPlugin.instance.getConfig().getInt("world-border.buffer", 0) - 1;
+                            int buffer = FactionsPlugin.getInstance().getConfig().getInt("world-border.buffer", 0) - 1;
                             if (faction.isWilderness() && !chunk.isOutsideWorldBorder(buffer)) {
                                 int cx = FLocation.chunkToBlock((int) chunk.getX());
                                 int cz = FLocation.chunkToBlock((int) chunk.getZ());
                                 int y = world.getHighestBlockYAt(cx, cz);
                                 Location tp = new Location(world, cx, y, cz);
                                 context.msg(TL.COMMAND_STUCK_TELEPORT, tp.getBlockX(), tp.getBlockY(), tp.getBlockZ());
-                                FactionsPlugin.instance.getTimers().remove(player.getUniqueId());
-                                FactionsPlugin.instance.getStuckMap().remove(player.getUniqueId());
+                                FactionsPlugin.getInstance().getTimers().remove(player.getUniqueId());
+                                FactionsPlugin.getInstance().getStuckMap().remove(player.getUniqueId());
                                 if (!Essentials.handleTeleport(player, tp)) {
                                     player.teleport(tp);
                                     Util.debug("/f stuck used regular teleport, not essentials!");
@@ -97,7 +97,7 @@ public class CmdStuck extends FCommand {
             }, delay * 20).getTaskId();
 
             FactionsPlugin.getInstance().getTimers().put(player.getUniqueId(), System.currentTimeMillis() + (delay * 1000));
-            long wait = FactionsPlugin.instance.getTimers().get(player.getUniqueId()) - System.currentTimeMillis();
+            long wait = FactionsPlugin.getInstance().getTimers().get(player.getUniqueId()) - System.currentTimeMillis();
             String time = DurationFormatUtils.formatDuration(wait, TL.COMMAND_STUCK_TIMEFORMAT.toString(), true);
             context.msg(TL.COMMAND_STUCK_START, time);
             FactionsPlugin.getInstance().getStuckMap().put(player.getUniqueId(), id);

@@ -1,11 +1,15 @@
 package com.massivecraft.factions.util;
 
 import com.massivecraft.factions.FLocation;
+import com.massivecraft.factions.Faction;
+import com.massivecraft.factions.Factions;
 import com.massivecraft.factions.FactionsPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 
 
@@ -20,23 +24,6 @@ import java.util.logging.Level;
  * [^][^][3][<][<][3][v][v]
  * [^][5][<][<][<][<][5][v]
  * [7][<][<][<][<][<][<][7]
- */
-
-/*
-thmihnea - Note
-This class looks like reading info from a matrix in a spiral-like shape
-k = 1;
-while (k < n){
-for (int i = k; i < n; i++)
- cout<<mat[k][i]<<' ';
- for (int i = k; i < n; i++)
-cout<<mat[i][n]<<' ';
- for (int i = n; i > k; i--)
-cout<<mat[n][i]<<' ';
- for (int i = n; i > k; i--)
- cout<<mat[i][k]<<' ';
- (c++ version dont mind me commenting this)
- OOH SO k = now() and n is loopStartTime() + 20 thats smart
  */
 
 public abstract class SpiralTask implements Runnable {
@@ -84,13 +71,17 @@ public abstract class SpiralTask implements Runnable {
      * done at each chunk in the spiral pattern.
      * Return false if the entire task needs to be aborted, otherwise return true to continue.
      */
-    public abstract boolean work();
+    public abstract boolean work() throws ExecutionException, InterruptedException;
 
     /*
      * Returns an FLocation pointing at the current chunk X and Z values.
      */
     public final FLocation currentFLocation() {
         return new FLocation(world.getName(), x, z);
+    }
+
+    public final CompletableFuture getFutureTask() {
+        return new CompletableFuture();
     }
 
     /*
@@ -124,10 +115,7 @@ public abstract class SpiralTask implements Runnable {
         taskID = ID;
     }
 
-    public final void run() {
-        if (!this.valid() || !readyToGo) return;
-        readyToGo = false;
-        if (!this.insideRadius()) return;
+    void whileTask() throws ExecutionException, InterruptedException {
         long loopStartTime = now();
         while (now() < loopStartTime + 20) {
             if (!this.work()) {
@@ -136,6 +124,19 @@ public abstract class SpiralTask implements Runnable {
             }
             if (!this.moveToNext())
                 return;
+        }
+    }
+
+    public final void run() {
+        if (!this.valid() || !readyToGo) return;
+        readyToGo = false;
+        if (!this.insideRadius()) return;
+        try {
+            whileTask();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException exception) {
+            exception.printStackTrace();
         }
         readyToGo = true;
     }

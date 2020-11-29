@@ -49,7 +49,7 @@ public class CmdKickAlt extends FCommand {
 
         if (context.fPlayer == toKick) {
             context.msg(TL.COMMAND_KICK_SELF);
-            context.msg(TL.GENERIC_YOUMAYWANT.toString() + FactionsPlugin.instance.cmdBase.cmdLeave.getUsageTemplate(context));
+            context.msg(TL.GENERIC_YOUMAYWANT.toString() + FactionsPlugin.getInstance().cmdBase.cmdLeave.getUsageTemplate(context));
             return;
         }
 
@@ -114,7 +114,7 @@ public class CmdKickAlt extends FCommand {
             context.msg(TL.COMMAND_KICK_KICKS, toKick.describeTo(context.fPlayer), toKickFaction.describeTo(context.fPlayer));
 
         if (Conf.logFactionKick)
-            FactionsPlugin.instance.log((context.sender instanceof ConsoleCommandSender ? "A console command" : context.fPlayer.getName()) + " kicked " + toKick.getName() + " from the faction: "
+            FactionsPlugin.getInstance().log((context.sender instanceof ConsoleCommandSender ? "A console command" : context.fPlayer.getName()) + " kicked " + toKick.getName() + " from the faction: "
                     + toKickFaction.getTag());
         // SHOULD NOT BE POSSIBLE BUT KEPT INCASE
         if (toKick.getRole() == Role.LEADER)

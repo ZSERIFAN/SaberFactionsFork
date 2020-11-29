@@ -18,6 +18,9 @@ import org.bukkit.entity.Player;
 
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public abstract class MemoryBoard extends Board {
@@ -37,11 +40,12 @@ public abstract class MemoryBoard extends Board {
         return Factions.getInstance().getFactionById(getIdAt(flocation));
     }
 
-    public void setIdAt(String id, FLocation flocation) {
+    public boolean setIdAt(String id, FLocation flocation) {
         clearOwnershipAt(flocation);
         if (id.equals("0"))
             removeAt(flocation);
         flocationIds.put(flocation, id);
+        return true;
     }
 
     public void setFactionAt(Faction faction, FLocation flocation) {
@@ -52,14 +56,13 @@ public abstract class MemoryBoard extends Board {
         Faction faction = getFactionAt(flocation);
         faction.getWarps().values().removeIf(lazyLocation -> flocation.isInChunk(lazyLocation.getLocation()));
         for (Entity entity : flocation.getChunk().getEntities()) {
-            if (entity instanceof Player) {
-                FPlayer fPlayer = FPlayers.getInstance().getByPlayer((Player) entity);
-                if (!fPlayer.isAdminBypassing() && fPlayer.isFlying())
-                    fPlayer.setFlying(false);
-                if (fPlayer.isWarmingUp()) {
-                    fPlayer.clearWarmup();
-                    fPlayer.msg(TL.WARMUPS_CANCELLED);
-                }
+            if (!(entity instanceof Player)) continue;
+            FPlayer fPlayer = FPlayers.getInstance().getByPlayer(((Player) entity).getPlayer());
+            if (!fPlayer.isAdminBypassing() && fPlayer.isFlying())
+                fPlayer.setFlying(false);
+            if (fPlayer.isWarmingUp()) {
+                fPlayer.clearWarmup();
+                fPlayer.msg(TL.WARMUPS_CANCELLED);
             }
         }
         clearOwnershipAt(flocation);
@@ -79,10 +82,12 @@ public abstract class MemoryBoard extends Board {
     }
 
     // not to be confused with claims, ownership referring to further member-specific ownership of a claim
-    public void clearOwnershipAt(FLocation flocation) {
+    public boolean clearOwnershipAt(FLocation flocation) {
         Faction faction = getFactionAt(flocation);
-        if (faction != null && faction.isNormal())
+        if (faction != null && faction.isNormal()) {
             faction.clearClaimOwnership(flocation);
+            return true;
+        } else return false;
     }
 
     public void unclaimAll(String factionId) {

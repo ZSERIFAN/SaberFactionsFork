@@ -1303,8 +1303,6 @@ public enum TL {
      */
     TL(String start) {
         this.path = this.name().toLowerCase();
-        if (this.path.startsWith("."))
-            path = "root" + path;
         this.def = start;
     }
 

@@ -94,7 +94,7 @@ public class CmdWild extends FCommand implements WaitedTask {
 
     public void setTeleporting(Player p) {
         teleporting.add(p);
-        Bukkit.getScheduler().scheduleSyncDelayedTask(FactionsPlugin.instance, () -> teleporting.remove(p), FactionsPlugin.getInstance().getConfig().getInt("Wild.Arrival.FallDamageWindow") * 20);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(FactionsPlugin.getInstance(), () -> teleporting.remove(p), FactionsPlugin.getInstance().getConfig().getInt("Wild.Arrival.FallDamageWindow") * 20);
     }
 
     @Override

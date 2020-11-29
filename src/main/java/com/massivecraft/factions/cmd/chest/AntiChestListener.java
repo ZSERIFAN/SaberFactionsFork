@@ -32,7 +32,7 @@ public class AntiChestListener implements Listener {
         if (e.getClick().isShiftClick())
             if (clicked == clicker) {
                 ItemStack clickedOn = e.getCurrentItem();
-                if (clickedOn != null && FactionsPlugin.instance.itemList.contains(clickedOn.getType().toString())) {
+                if (clickedOn != null && FactionsPlugin.getInstance().itemList.contains(clickedOn.getType().toString())) {
                     fPlayer.msg(TL.CHEST_ITEM_DENIED_TRANSFER, clickedOn.getType().toString());
                     e.setCancelled(true);
                 }
@@ -40,12 +40,12 @@ public class AntiChestListener implements Listener {
 
         if (clicked != clicker) {
             ItemStack onCursor = e.getCursor();
-            if (onCursor != null && FactionsPlugin.instance.itemList.contains(onCursor.getType().toString())) {
+            if (onCursor != null && FactionsPlugin.getInstance().itemList.contains(onCursor.getType().toString())) {
                 fPlayer.msg(TL.CHEST_ITEM_DENIED_TRANSFER, onCursor.getType().toString());
                 e.setCancelled(true);
             } else if (e.getClick().isKeyboardClick()) {
                 ItemStack item = clicker.getItem(e.getHotbarButton());
-                if (item != null && FactionsPlugin.instance.itemList.contains(item.getType().toString())) {
+                if (item != null && FactionsPlugin.getInstance().itemList.contains(item.getType().toString())) {
                     fPlayer.msg(TL.CHEST_ITEM_DENIED_TRANSFER, item.getType().toString());
                     e.setCancelled(true);
                 }
@@ -62,7 +62,7 @@ public class AntiChestListener implements Listener {
         if (e.isCancelled()) return;
 
         ItemStack dragged = e.getOldCursor();
-        if (FactionsPlugin.instance.itemList.contains(dragged.getType().toString())) {
+        if (FactionsPlugin.getInstance().itemList.contains(dragged.getType().toString())) {
             int inventorySize = e.getInventory().getSize();
             for (int i : e.getRawSlots())
                 if (i < inventorySize) {

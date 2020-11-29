@@ -51,15 +51,13 @@ public class SeeChunkUtil extends BukkitRunnable {
         // 2 - 1 => +16 +0
         // 2 - 2 => +16 +16
 
-        for (int i = 1; i <= 2; i++) {
-            blockX = chunkX * 16;
-            blockZ = chunkZ * 16;
-            for (int j = 1; j <= 2; j++) {
-                if (j == 2) blockZ += 16;
-                if (i == 2) blockX += 16;
-                showPillar(me, world, blockX, blockZ, effect, color);
-            }
-        }
+        blockX = chunkX * 16;
+        blockZ = chunkZ * 16;
+
+        showPillar(me, world, blockX, blockZ, effect, color);
+        showPillar(me, world, blockX, blockZ + 16, effect, color);
+        showPillar(me, world, blockX + 16, blockZ, effect, color);
+        showPillar(me, world, blockX + 16, blockZ + 16, effect, color);
     }
 
     public static void showPillar(Player player, World world, int blockX, int blockZ, Object effect, ParticleColor color) {

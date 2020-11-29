@@ -26,6 +26,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
@@ -45,10 +46,13 @@ public class FactionsPlugin extends MPlugin {
      */
 
     public static FactionsPlugin instance;
+    public int threads = getConfig().getInt("cpu-threads");
     public static boolean cachedRadiusClaim;
     public static Permission perms = null;
     public static boolean startupFinished = false;
     public boolean PlaceholderApi;
+    public static YamlConfiguration LANG;
+    public static File LANG_FILE;
     public FCmdRoot cmdBase;
     public CmdAutoHelp cmdAutoHelp;
     public short version;
@@ -97,24 +101,6 @@ public class FactionsPlugin extends MPlugin {
     }
 
     @Override
-    public GsonBuilder getGsonBuilder() {
-        Type mapFLocToStringSetType = new TypeToken<Map<FLocation, Set<String>>>() {
-        }.getType();
-
-        Type accessTypeAdatper = new TypeToken<Map<Permissable, Map<PermissableAction, Access>>>() {
-        }.getType();
-
-        return new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().enableComplexMapKeySerialization().excludeFieldsWithModifiers(Modifier.TRANSIENT, Modifier.VOLATILE)
-                .registerTypeAdapter(accessTypeAdatper, new PermissionsMapTypeAdapter())
-                .registerTypeAdapter(LazyLocation.class, new MyLocationTypeAdapter())
-                .registerTypeAdapter(mapFLocToStringSetType, new MapFLocToStringSetTypeAdapter())
-                .registerTypeAdapter(Inventory.class, new InventoryTypeAdapter())
-                .registerTypeAdapter(ReserveObject.class, new ReserveAdapter())
-                .registerTypeAdapter(Location.class, new LocationTypeAdapter())
-                .registerTypeAdapterFactory(EnumTypeAdapter.ENUM_FACTORY);
-    }
-
-    @Override
     public void onDisable() {
         if (this.AutoLeaveTask != null) {
             getServer().getScheduler().cancelTask(this.AutoLeaveTask);
@@ -151,6 +137,24 @@ public class FactionsPlugin extends MPlugin {
     @Override
     public boolean handleCommand(CommandSender sender, String commandString, boolean testOnly) {
         return sender instanceof Player && FactionsPlayerListener.preventCommand(commandString, (Player) sender) || super.handleCommand(sender, commandString, testOnly);
+    }
+
+    @Override
+    public GsonBuilder getGsonBuilder() {
+        Type mapFLocToStringSetType = new TypeToken<Map<FLocation, Set<String>>>() {
+        }.getType();
+
+        Type accessTypeAdatper = new TypeToken<Map<Permissable, Map<PermissableAction, Access>>>() {
+        }.getType();
+
+        return new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().enableComplexMapKeySerialization().excludeFieldsWithModifiers(Modifier.TRANSIENT, Modifier.VOLATILE)
+                .registerTypeAdapter(accessTypeAdatper, new PermissionsMapTypeAdapter())
+                .registerTypeAdapter(LazyLocation.class, new MyLocationTypeAdapter())
+                .registerTypeAdapter(mapFLocToStringSetType, new MapFLocToStringSetTypeAdapter())
+                .registerTypeAdapter(Inventory.class, new InventoryTypeAdapter())
+                .registerTypeAdapter(ReserveObject.class, new ReserveAdapter())
+                .registerTypeAdapter(Location.class, new LocationTypeAdapter())
+                .registerTypeAdapterFactory(EnumTypeAdapter.ENUM_FACTORY);
     }
 
     @Override
@@ -221,5 +225,9 @@ public class FactionsPlugin extends MPlugin {
         fileManager = new FileManager();
         fileManager.setupFiles();
         fLogManager = new FLogManager();
+    }
+
+    public static File getLangFile() {
+        return LANG_FILE;
     }
 }

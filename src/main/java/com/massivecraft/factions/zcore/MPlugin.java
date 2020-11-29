@@ -96,67 +96,43 @@ public abstract class MPlugin extends JavaPlugin {
     }
 
     public void loadLang() {
-        File lang = new File(getDataFolder(), "lang.yml");
-        OutputStream out = null;
-        InputStream defLangStream = this.getResource("lang.yml");
+        File lang = new File(this.getDataFolder(), "lang.yml");
         if (!lang.exists()) {
             try {
-                getDataFolder().mkdir();
+                this.getDataFolder().mkdir();
                 lang.createNewFile();
-                if (defLangStream != null) {
-                    out = new FileOutputStream(lang);
-                    int read;
-                    byte[] bytes = new byte[1024];
-
-                    while ((read = defLangStream.read(bytes)) != -1) {
-                        out.write(bytes, 0, read);
-                    }
-                    YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new BufferedReader(new InputStreamReader(defLangStream)));
+                Reader defConfigStream = new InputStreamReader(this.getResource("lang.yml"), "UTF-8");
+                if (defConfigStream != null) {
+                    YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
+                    defConfig.save(lang);
                     TL.setFile(defConfig);
+                    return;
                 }
-            } catch (IOException e) {
+            } catch(IOException e) {
                 e.printStackTrace(); // So they notice
                 getLogger().severe("[Factions] Couldn't create language file.");
                 getLogger().severe("[Factions] This is a fatal error. Now disabling");
                 this.setEnabled(false); // Without it loaded, we can't send them messages
-            } finally {
-                if (defLangStream != null) {
-                    try {
-                        defLangStream.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (out != null) {
-                    try {
-                        out.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                }
             }
         }
-
         YamlConfiguration conf = YamlConfiguration.loadConfiguration(lang);
-        for (TL item : TL.values())
-            if (conf.getString(item.getPath()) == null)
+        for(TL item : TL.values()) {
+            if (conf.getString(item.getPath()) == null) {
                 conf.set(item.getPath(), item.getDefault());
-
-        if (conf.getString(TL.COMMAND_SHOW_POWER.getPath(), "").contains("%5$s")) {
-            conf.set(TL.COMMAND_SHOW_POWER.getPath(), TL.COMMAND_SHOW_POWER.getDefault());
-            log(Level.INFO, "Removed errant format specifier from f show power.");
+            }
         }
-
         TL.setFile(conf);
+        FactionsPlugin.LANG = conf;
+        FactionsPlugin.LANG_FILE = lang;
         try {
-            conf.save(lang);
-        } catch (IOException e) {
+            conf.save(FactionsPlugin.getInstance().getLangFile());
+        } catch(IOException e) {
             getLogger().log(Level.WARNING, "Factions: Failed to save lang.yml.");
-            getLogger().log(Level.WARNING, "Factions: Report this stack trace to Driftay.");
+            getLogger().log(Level.WARNING, "Factions: Report this stack trace to thmDev.");
             e.printStackTrace();
         }
     }
+
 
     public void onDisable() {
         if (saveTask != null) {

@@ -113,9 +113,9 @@ public class CmdJoin extends FCommand {
 
         if (Conf.logFactionJoin)
             if (samePlayer)
-                FactionsPlugin.instance.log(TL.COMMAND_JOIN_JOINEDLOG.toString(), fplayer.getName(), faction.getTag());
+                FactionsPlugin.getInstance().log(TL.COMMAND_JOIN_JOINEDLOG.toString(), fplayer.getName(), faction.getTag());
             else
-                FactionsPlugin.instance.log(TL.COMMAND_JOIN_MOVEDLOG.toString(), context.fPlayer.getName(), fplayer.getName(), faction.getTag());
+                FactionsPlugin.getInstance().log(TL.COMMAND_JOIN_MOVEDLOG.toString(), context.fPlayer.getName(), fplayer.getName(), faction.getTag());
     }
 
     private int getFactionMemberLimit(Faction f) {

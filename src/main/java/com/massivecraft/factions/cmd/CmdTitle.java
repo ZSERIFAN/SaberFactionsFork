@@ -25,7 +25,7 @@ public class CmdTitle extends FCommand {
 
     @Override
     public void perform(CommandContext context) {
-        FactionsPlugin.getInstance().getServer().getScheduler().runTaskAsynchronously(FactionsPlugin.instance, () -> {
+        FactionsPlugin.getInstance().getServer().getScheduler().runTaskAsynchronously(FactionsPlugin.getInstance(), () -> {
             FPlayer you = context.argAsBestFPlayerMatch(0);
             if (you == null) return;
             context.args.remove(0);

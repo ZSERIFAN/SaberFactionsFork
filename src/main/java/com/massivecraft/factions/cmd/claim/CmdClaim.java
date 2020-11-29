@@ -13,6 +13,10 @@ import com.massivecraft.factions.util.SpiralTask;
 import com.massivecraft.factions.zcore.fperms.Access;
 import com.massivecraft.factions.zcore.fperms.PermissableAction;
 import com.massivecraft.factions.zcore.util.TL;
+import org.apache.commons.lang.time.StopWatch;
+import org.checkerframework.checker.units.qual.C;
+
+import java.util.concurrent.*;
 
 
 public class CmdClaim extends FCommand {
@@ -75,7 +79,11 @@ public class CmdClaim extends FCommand {
             case 1:
                 if (!Permission.CLAIM_RADIUS.has(context.sender, true))
                     return;
-                new SpiralTask(new FLocation(context.player), radius) {
+                StopWatch sw = new StopWatch();
+                sw.start();
+
+                final ExecutorService executor = Executors.newFixedThreadPool(FactionsPlugin.getInstance().threads);
+                executor.execute(() -> new SpiralTask(new FLocation(context.player), radius) {
                     private final int limit = Conf.radiusClaimFailureLimit - 1;
                     private int failCount = 0;
                     private int successfulClaims = 0;
@@ -95,6 +103,7 @@ public class CmdClaim extends FCommand {
                     }
 
                     public void finish() {
+                        sw.stop();
                         if (FactionsPlugin.cachedRadiusClaim) {
                             if (successfulClaims > 0) {
                                 if (forFaction.isWarZone() || forFaction.isSafeZone())
@@ -102,10 +111,11 @@ public class CmdClaim extends FCommand {
                                 else
                                     context.fPlayer.getFaction().getFPlayersWhereOnline(true).forEach(f -> f.msg(TL.CLAIM_RADIUS_CLAIM, context.fPlayer.describeTo(f, true), String.valueOf(successfulClaims), context.fPlayer.getPlayer().getLocation().getChunk().getX(), context.fPlayer.getPlayer().getLocation().getChunk().getZ()));
                                 stop();
+                                System.out.println("[LightFactions] - Process took: " + sw.getTime() + "ms - Claimed a total of: " + successfulClaims + " chunks.");
                             }
                         }
                     }
-                };
+                });
         }
 
     }

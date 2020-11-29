@@ -65,12 +65,12 @@ public enum FactionTag implements Tag {
         return Tag.isMinimalShow() ? null : TL.ECON_OFF.format("balance");
     }),
     TNT_BALANCE("{tnt-balance}", (fac) -> {
-        if (FactionsPlugin.instance.getConfig().getBoolean("ftnt.Enabled"))
+        if (FactionsPlugin.getInstance().getConfig().getBoolean("ftnt.Enabled"))
             return String.valueOf(fac.getTnt());
         return Tag.isMinimalShow() ? null : "";
     }),
     TNT_MAX("{tnt-max-balance}", (fac) -> {
-        if (FactionsPlugin.instance.getConfig().getBoolean("ftnt.Enabled"))
+        if (FactionsPlugin.getInstance().getConfig().getBoolean("ftnt.Enabled"))
             return String.valueOf(fac.getTntBankLimit());
         return Tag.isMinimalShow() ? null : "";
     }),

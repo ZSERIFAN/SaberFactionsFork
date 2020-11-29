@@ -1,10 +1,13 @@
-# SaberFactions by Driftay
-# Report issues: https://github.com/Driftay/Saber-Factions/issues/new
-# Live support: https://discord.gg/TFxWKeX
-# Spigot Site: https://www.spigotmc.org/resources/saberfactions-1-7-1-13-the-complete-factions-solution.68840/
-# Website: https://www.saberllc.net/
+# LightFactions by thmihnea
 
 Config-Version: 1.1
+
+# Number of threads that should be used for chunk-claiming.
+# Tested on a i9 dedicated server: while using all 16 threads of the CPU,
+# we were able to score 1 million claimed chunks in 20 seconds. That's amazing!
+# Note: It's suggested to not use all of your CPU cores for the claiming system. (use about 25% of them)
+
+cpu-threads: 4
 
 # Debug
 # Turn this on if you are having issues with something and working on resolving them.

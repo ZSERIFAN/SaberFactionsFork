@@ -55,7 +55,7 @@ public class CmdTnt extends FCommand {
 
     @Override
     public void perform(CommandContext context) {
-        if (!FactionsPlugin.instance.getConfig().getBoolean("ftnt.Enabled")) {
+        if (!FactionsPlugin.getInstance().getConfig().getBoolean("ftnt.Enabled")) {
             context.msg(TL.COMMAND_TNT_DISABLED_MSG);
             return;
         }
